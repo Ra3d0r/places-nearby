@@ -1,0 +1,15 @@
+// Подключение конфигов
+@import "../config/_normalize.scss";
+@import "../config/_reset.scss";
+@import "../config/_fonts.scss";
+
+// Подключение блоков
+@import "../blocks/_header.scss";
+
+
+// Основные селекторы
+.container {
+	max-width: 1220px;
+	padding: 0 10px;
+	margin: 0 auto;
+}

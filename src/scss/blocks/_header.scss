@@ -1,0 +1,18 @@
+@import "../helpers/toggle-btn";
+
+.header {
+	display: flex;
+	padding-top: 28px;
+
+	&__name {
+		margin-right: auto;
+	}
+}
+
+.nav {
+
+	&__list {
+		display: flex;
+		justify-content: space-between;
+	}
+}
