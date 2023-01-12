@@ -1,16 +1,17 @@
 header.header
-	p.header__name FindPlace
+	p.header__name-company FindPlace
 	nav.nav.header__nav 
-		ul.nav__list
-			each item in links
-				li.nav__item
-					a.nav__link #{item}
-	.header__select-languages.select-languages
-		img.select-languages__earth(src="/img/earth.png", alt="earth")
-		p.select-languages__languages English
-		img.select-languages__arrow(src="/img/arrow.png", alt="arrow")
-	.toggle-switch.header__toggle
-		label.toggle-switch__label
-			input.toggle-switch__checkbox(type='checkbox')
-			span.toggle-switch__slider
+		.header__box-control
+			ul.nav__list
+				each item in links
+					li.nav__item
+						a.nav__link #{item}
+			.header__select-languages.select-languages
+				img.select-languages__earth(src="/img/earth.png", alt="earth")
+				p.select-languages__languages English
+				img.select-languages__arrow(src="/img/arrow.png", alt="arrow")
+			.toggle-switch.header__toggle
+				label.toggle-switch__label
+					input.toggle-switch__checkbox(type='checkbox')
+					span.toggle-switch__slider
 	

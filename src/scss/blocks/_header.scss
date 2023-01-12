@@ -3,9 +3,27 @@
 .header {
 	display: flex;
 	padding-top: 28px;
+	justify-content: space-between;
+	align-items: center;
 
-	&__name {
-		margin-right: auto;
+	&__name-company {
+		color: var(--color-orange);
+		font-family: Inter;
+		font-weight: 800;
+	}
+
+	&__box-control {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 555px;
+		height: 33px;
+		font-family: Inter;
+		font-weight: 500;
+	}
+
+	&__toggle {
+		transform: translateY(-16px);
 	}
 }
 
@@ -14,5 +32,20 @@
 	&__list {
 		display: flex;
 		justify-content: space-between;
+		max-width: 260px;
+		width: 100%;
 	}
+}
+
+.select-languages {
+	display: flex;
+	justify-content: space-between;
+	max-width: 100px;
+	width: 100%;
+	padding-top: 7px;
+
+	&__earth {
+		transform: translateY(-2px);
+	}
+
 }
