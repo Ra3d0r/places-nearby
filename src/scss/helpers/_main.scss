@@ -5,6 +5,7 @@
 
 // Подключение блоков
 @import "../blocks/_header.scss";
+@import "../blocks/main-index.scss";
 
 
 // Основные селекторы
@@ -14,6 +15,9 @@
 	margin: 0 auto;
 }
 
+
+// Переменные
 :root {
-	--color-orange: #F96C61
+	--color-orange: #F96C61;
+	--color-button: #FD6D61;
 }
