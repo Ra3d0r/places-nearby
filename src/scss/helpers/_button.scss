@@ -1,0 +1,18 @@
+.main-button {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	gap: 21px;
+	width: 246px;
+	height: 58px;
+	box-shadow: 0px 6px 22px rgba(0, 0, 0, 0.16);
+	border-radius: 10px;
+	border: 0;
+	background: var(--color-button);
+
+	&__text {
+		color: #ffff;
+	}
+}

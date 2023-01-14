@@ -1,1 +1,28 @@
-@import "./helpers/_main.scss"
+// Подключение конфигов
+@import "config/_normalize.scss";
+@import "config/_reset.scss";
+@import "config/_fonts.scss";
+
+// Подключение блоков
+@import "blocks/_header.scss";
+@import "blocks/_main-index.scss";
+
+// Подключение общих элементов
+@import "helpers/_toggle-btn.scss";
+@import "helpers/_button.scss";
+
+
+// Глобальный контейнер
+.container {
+	max-width: 1240px;
+	padding: 0 20px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+
+// Глобальные переменные
+:root {
+	--color-orange: #F96C61;
+	--color-button: #FD6D61;
+}
