@@ -44,12 +44,12 @@
 	border-radius: 50%;
 	background-color: var(--light);
 	transition: 0.3s;
-	background: url('/img/toggle-light.png') center/cover no-repeat
+	background: url('../img/toggle-light.png') center/cover no-repeat
 }
 
 .toggle-switch__checkbox:checked~.toggle-switch__slider::before {
 	transform: translateX(120%);
 	background-color: var(--dark);
 	box-shadow: none;
-	background: url('/img/toggle-dark.png') center/cover no-repeat
+	background: url('../img/toggle-dark.png') center/cover no-repeat
 }
