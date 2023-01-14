@@ -6,10 +6,11 @@
 		justify-content: space-between;
 		width: 100%;
 		gap: 50px;
+		flex-wrap: wrap;
 
-		@media (max-width: 800px) {
+		@media (max-width: 1200px) {
 			justify-content: center;
-			flex-wrap: wrap;
+
 		}
 	}
 
@@ -22,7 +23,8 @@
 
 	&__right-content {
 		transform: translateY(-15px);
-		width: 50%;
+
+		width: 540px;
 
 		img,
 		picture {
@@ -30,8 +32,9 @@
 			width: 100%;
 		}
 
-		@media (max-width: 800px) {
+		@media (max-width: 1200px) {
 			transform: translateY(0);
+			transform: translateX(-35px);
 		}
 	}
 }
@@ -89,5 +92,6 @@
 	position: absolute;
 	max-width: 1440px;
 	width: 100%;
+	overflow: hidden;
 	z-index: -1;
 }
