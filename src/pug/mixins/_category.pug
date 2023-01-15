@@ -1,0 +1,8 @@
+mixin category(title, subtitle, svg, textArrow= 'Checkout')
+	.categories__category-container
+						.categories__container-icon
+							+#{svg} 
+						h3.categories__title= title 
+						p.categories__subtitle= subtitle 
+						a.categories__action.action= textArrow
+							+arrow-right

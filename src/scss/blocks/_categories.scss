@@ -18,14 +18,42 @@
 
 	&__flex-container {
 		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		padding-top: 90px;
 	}
 
 	&__category-container {
 		display: flex;
 		flex-direction: column;
+		justify-content: space-between;
+
+		height: 330px;
+		max-width: 270px;
+		width: 100%;
+	}
+
+	&__container-icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 101px;
+		height: 104px;
+		transition: all 0.2s;
+		border-radius: 10px;
+
+		&:hover {
+			background-color: var(--color-hover-category);
+			box-shadow: 0px 6px 22px rgba(0, 0, 0, 0.16);
+
+			path {
+				fill: #fff;
+			}
+		}
 	}
 
 	&__title {
+		width: 181px;
 		font-style: normal;
 		font-weight: 700;
 		font-size: 30px;
@@ -33,6 +61,7 @@
 	}
 
 	&__subtitle {
+		width: 270px;
 		font-style: normal;
 		font-weight: 400;
 		font-size: 18px;
@@ -49,6 +78,7 @@
 	bottom: 0;
 	right: 0;
 	height: 100%;
+	width: 100%;
 	margin: auto;
 	z-index: -1;
 }

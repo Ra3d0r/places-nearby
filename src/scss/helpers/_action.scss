@@ -1,5 +1,5 @@
 .action {
-	display: flex;
+	width: 106px;
 	font-style: normal;
 	font-weight: 500;
 	font-size: 16px;
@@ -7,8 +7,8 @@
 	color: #A5A6F6;
 
 	&__arrow {
-		width: 22px;
-		height: 14px;
-		color: #A5A6F6;
+		path {
+			fill: #A5A6F6;
+		}
 	}
 }
