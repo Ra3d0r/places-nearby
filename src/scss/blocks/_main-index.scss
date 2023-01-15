@@ -1,5 +1,6 @@
 .main-index {
-	padding-top: 160px;
+	margin-bottom: 246px;
+	position: relative;
 
 	&__content {
 		display: flex;
@@ -71,8 +72,12 @@
 
 .road {
 	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 100%;
+	left: 0;
+	margin: auto;
 	max-width: 1440px;
 	width: 100%;
-	overflow: hidden;
 	z-index: -1;
 }

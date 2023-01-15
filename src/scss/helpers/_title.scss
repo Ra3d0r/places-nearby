@@ -1,0 +1,21 @@
+.container-title {
+	position: relative;
+	display: inline-block;
+
+	&__title {
+
+		font-family: 'Inter';
+		font-style: normal;
+		font-weight: 600;
+		font-size: 36px;
+		line-height: 80px;
+	}
+
+	&__line {
+		position: absolute;
+		left: 20%;
+		bottom: 1%;
+		width: 50%;
+		border: 3px solid #FD6D61;
+	}
+}

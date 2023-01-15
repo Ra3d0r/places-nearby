@@ -1,0 +1,54 @@
+.section-categories {
+	&__container-title {
+		width: 200px;
+		margin: 0 auto;
+		margin-bottom: 34px;
+	}
+
+	&__categories {
+		position: relative;
+		height: 500px;
+	}
+
+
+}
+
+.categories {
+	font-family: 'Inter';
+
+	&__flex-container {
+		display: flex;
+	}
+
+	&__category-container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__title {
+		font-style: normal;
+		font-weight: 700;
+		font-size: 30px;
+		line-height: 36px;
+	}
+
+	&__subtitle {
+		font-style: normal;
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 32px;
+	}
+}
+
+
+
+.background-categories {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	height: 100%;
+	margin: auto;
+	z-index: -1;
+}

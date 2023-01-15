@@ -6,15 +6,19 @@
 // Подключение блоков
 @import "blocks/_header.scss";
 @import "blocks/_main-index.scss";
+@import "blocks/_categories.scss";
 
 // Подключение общих элементов
 @import "helpers/_toggle-btn.scss";
 @import "helpers/_button.scss";
+@import "helpers/_title.scss";
+@import "helpers/_action.scss";
 
 
 // Глобальный контейнер
 .container {
 	max-width: 1240px;
+	width: 100%;
 	padding: 0 20px;
 	margin: 0 auto;
 	overflow: hidden;
