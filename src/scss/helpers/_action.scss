@@ -1,14 +1,42 @@
 .action {
-	width: 106px;
+	width: 122px;
 	font-style: normal;
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 24px;
-	color: #A5A6F6;
+	color: var(--color-gray);
+
+	&:hover {
+		color: var(--color-orange-light);
+		cursor: pointer;
+
+		path {
+			fill: var(--color-orange-light);
+			animation: move 0.3s ease-in;
+		}
+	}
 
 	&__arrow {
+		padding-left: 2px;
+		margin-bottom: -1px;
+
 		path {
-			fill: #A5A6F6;
+			fill: var(--color-gray);
+
 		}
+	}
+}
+
+@keyframes move {
+	0% {
+		transform: translateX(-4px);
+	}
+
+	50% {
+		transform: translateX(7px);
+	}
+
+	100% {
+		transform: translateX(0);
 	}
 }
