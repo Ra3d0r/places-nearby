@@ -13,8 +13,10 @@
 
 	&__line {
 		position: absolute;
-		left: 20%;
-		bottom: 1%;
+		top: 70%;
+		left: 0;
+		right: 0;
+		bottom: 0;
 		width: 50%;
 		border: 3px solid var(--color-orange-light);
 	}
