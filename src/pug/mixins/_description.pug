@@ -1,0 +1,10 @@
+mixin description(title, subtitle, imgBig, imgMini, actionText = 'Checkout')
+	.description
+		.description__container-text
+			.description__title= title
+			.description__subtitle= subtitle
+			a.description__action.action= actionText
+					+arrow-right
+		.description__container-images
+			img(src=`img/${imgBig}`, alt="Photo of place").description__image--big
+			img(src=`img/${imgMini}`, alt="Photo of place").description__image--mini

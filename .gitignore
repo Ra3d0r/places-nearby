@@ -1,3 +1,4 @@
 node_modules
 .DS_*
 dist
+gulp/version.json
