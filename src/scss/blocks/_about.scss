@@ -1,6 +1,9 @@
 .description {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
+	align-items: center;
+	height: 525px;
+
 
 	&__container-text {
 		display: flex;
@@ -29,4 +32,46 @@
 		font-size: 15px;
 		line-height: 32px;
 	}
+
+	&__container-images {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 540px;
+		height: 520px;
+	}
+
+	&__container-position {
+		position: relative;
+	}
+
+	&__image--mini {
+		position: absolute;
+		left: 54%;
+		top: 43.7%;
+		width: 235px;
+		height: 242px;
+	}
+
+	&__image--big {
+		width: 278px;
+		height: 339px;
+	}
+}
+
+.section-about {
+	&__container-title {
+		width: 123px;
+		margin: 0 auto 80px auto
+	}
+}
+
+.order2-1 {
+	order: 2;
+}
+
+.order2-2 {
+	order: 1;
+	justify-content: start;
+	padding-left: 5%;
 }
