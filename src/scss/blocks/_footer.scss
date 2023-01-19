@@ -1,0 +1,34 @@
+footer {
+	background: rgba(239, 239, 239, 0.83);
+}
+
+.footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 236px;
+	flex-wrap: wrap;
+
+
+	&__nav {
+		width: 478px;
+		height: 27px;
+	}
+}
+
+.nav {
+	&__list-footer {
+		display: flex;
+		justify-content: space-between;
+		width: 478px;
+		height: 27px;
+	}
+
+	&__item-footer {
+		font-family: 'Inter';
+		font-style: normal;
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 22px;
+	}
+}

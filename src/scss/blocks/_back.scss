@@ -1,0 +1,46 @@
+.arrow-top {
+	display: flex;
+	justify-content: space-between;
+	width: 129px;
+	height: 33px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 32px;
+	cursor: pointer;
+
+	&:hover {
+		path {
+			animation: moveUp 0.3s ease-in;
+		}
+	}
+
+	svg {
+		order: -1;
+	}
+}
+
+
+@keyframes moveUp {
+	0% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(-7px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+.section-back {
+	margin-bottom: 39px;
+
+	&__arrow-top {
+		display: flex;
+		justify-content: flex-end;
+	}
+}
