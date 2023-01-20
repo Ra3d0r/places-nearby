@@ -4,6 +4,7 @@
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 160px;
+	width: 95%;
 
 	&__name-company {
 		color: var(--color-orange);
@@ -21,6 +22,11 @@
 		font-family: Inter;
 		font-weight: 500;
 		font-size: 18px;
+
+		@media (max-width: 710px) {
+			display: none;
+
+		}
 	}
 
 	&__toggle {
@@ -49,4 +55,16 @@
 		transform: translateY(-2px);
 	}
 
+}
+
+.burger-nav {
+	display: none;
+	width: 109px;
+	height: 61px;
+
+	@media (max-width: 710px) {
+		display: block;
+
+
+	}
 }
