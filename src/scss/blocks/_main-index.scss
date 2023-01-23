@@ -1,6 +1,7 @@
 .main-index {
 	margin-bottom: 246px;
 	position: relative;
+	@include total-padding;
 
 	&__content {
 		display: flex;

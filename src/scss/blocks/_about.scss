@@ -2,8 +2,10 @@
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	height: 525px;
+	flex-wrap: wrap;
+	min-height: 525px;
 	margin-bottom: 12px;
+	@include total-padding;
 
 
 	&__container-text {

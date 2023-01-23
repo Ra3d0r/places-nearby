@@ -8,6 +8,7 @@ footer {
 	align-items: center;
 	height: 236px;
 	flex-wrap: wrap;
+	@include total-padding;
 
 
 	&__nav {

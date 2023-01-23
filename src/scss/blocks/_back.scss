@@ -39,6 +39,7 @@
 
 .section-back {
 	margin-bottom: 39px;
+	@include total-padding;
 
 	&__arrow-top {
 		display: flex;
