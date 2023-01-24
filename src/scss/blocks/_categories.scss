@@ -23,6 +23,7 @@
 .categories {
 	font-family: 'Inter';
 
+
 	&__flex-container {
 		display: flex;
 		justify-content: space-between;
@@ -33,10 +34,19 @@
 			padding: 20px 0 20px 0;
 			justify-content: center;
 			gap: 20px;
+			row-gap: 40px;
 		}
 
-		@media (max-width: 546px) {
+		@media (max-width: 575px) {
 			gap: 50px;
+			text-align: center;
+			padding: 0;
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+
+		@media (max-width: 590px) {
+			padding-left: 16px;
 		}
 	}
 
@@ -48,6 +58,10 @@
 		height: 330px;
 		max-width: 270px;
 		width: 100%;
+
+		@media (max-width: 575px) {
+			align-items: center;
+		}
 	}
 
 	&__container-icon {

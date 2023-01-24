@@ -10,6 +10,10 @@ footer {
 	flex-wrap: wrap;
 	@include total-padding;
 
+	@media (max-width: 747px) {
+		justify-content: center;
+	}
+
 
 	&__nav {
 		width: 478px;
@@ -21,8 +25,12 @@ footer {
 	&__list-footer {
 		display: flex;
 		justify-content: space-between;
-		width: 478px;
+		row-gap: 20px;
+		flex-wrap: wrap;
+		max-width: 478px;
 		height: 27px;
+
+
 	}
 
 	&__item-footer {
