@@ -40,4 +40,16 @@ footer {
 		font-size: 18px;
 		line-height: 22px;
 	}
+
+	&__link-footer {
+		cursor: pointer;
+		background: linear-gradient(90deg, var(--color-orange) 0%, var(--color-orange-light) 100%) no-repeat;
+		background-size: 0% 2px;
+		background-position: left bottom;
+		transition: all 0.3s ease;
+
+		&:hover {
+			background-size: 100% 2px;
+		}
+	}
 }

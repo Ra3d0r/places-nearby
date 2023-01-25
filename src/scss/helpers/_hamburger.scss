@@ -1,0 +1,46 @@
+.hamburger {
+	display: none;
+	position: fixed;
+	right: 0;
+	width: 70%;
+	background-color: var(--hamburger-background);
+	height: 100vh;
+	z-index: 1;
+	font-family: Inter;
+	font-weight: 500;
+	font-size: 18px;
+
+	&__flex-container {
+		display: flex;
+		height: 100vh;
+		align-items: center;
+	}
+
+	&__box-control {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		row-gap: 20px;
+		width: 80%;
+		height: 60%;
+		margin: 0 auto;
+	}
+
+	&__cross {
+		position: absolute;
+		cursor: pointer;
+	}
+}
+
+.nav__list-hamburger {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 200px;
+	row-gap: 20px;
+}
+
+.hamburger-active {
+	display: block;
+}

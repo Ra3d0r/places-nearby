@@ -1,3 +1,5 @@
+$color: #FD6D61;
+
 .main-button {
 	display: flex;
 	flex-direction: row;
@@ -11,6 +13,11 @@
 	border-radius: 10px;
 	border: 0;
 	background: var(--color-orange-light);
+	cursor: pointer;
+
+	&:hover {
+		background: lighten($color, 1%);
+	}
 
 	&__text {
 		color: #ffff;

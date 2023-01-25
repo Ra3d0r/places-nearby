@@ -110,7 +110,7 @@
 .order2-1 {
 	order: 2;
 
-	@media (max-width: 1109px) {
+	@media (max-width: 1015px) {
 		order: 1;
 	}
 }
@@ -119,7 +119,7 @@
 	order: 1;
 	justify-content: start;
 
-	@media (max-width: 1109px) {
+	@media (max-width: 1015px) {
 		order: 2;
 	}
 }
