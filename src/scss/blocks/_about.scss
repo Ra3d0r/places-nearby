@@ -6,6 +6,8 @@
 	min-height: 525px;
 	margin-bottom: 12px;
 	@include total-padding;
+	background-color: var(--background-color-white);
+	scroll-behavior: smooth;
 
 
 	&__container-text {

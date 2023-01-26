@@ -17,7 +17,7 @@
 @import "helpers/_button.scss";
 @import "helpers/_title.scss";
 @import "helpers/_action.scss";
-@import "helpers/_hamburger.scss";
+@import "helpers/_menu.scss";
 
 
 // Глобальный контейнер
@@ -37,10 +37,19 @@
 	--color-gray: #A5A6F6;
 
 	--background-color-gray: rgba(239, 239, 239, 0.83);
+	--background-color-white: #FFFFFF;
 
-	--hamburger-background: #cac6c6;
+	--menu-background: #F7B48B;
 }
 
-body {
+// Главные селекторы по тегам
+
+* {
+	scroll-behavior: smooth;
 	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
 }

@@ -16,3 +16,29 @@ async function WebpIsSupported() {
 		document.querySelector('body').classList.add('no-webp');
 	}
 })();
+
+function init() {
+	const hamburger = document.querySelector('#hamburger');
+	const cross = document.querySelector('#close-menu');
+	attachEvents({
+		hamburger,
+		cross,
+	});
+}
+
+function attachEvents(objElements) {
+	const { hamburger, cross } = objElements;
+
+	hamburger.addEventListener('click', openMenu);
+	cross.addEventListener('click', closeMenu);
+}
+
+function openMenu() {
+	document.querySelector('#menu').classList.add('menu-active');
+}
+
+function closeMenu() {
+	document.querySelector('#menu').classList.remove('menu-active');
+}
+
+init();

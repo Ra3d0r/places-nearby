@@ -1,14 +1,15 @@
-.hamburger {
-	display: none;
+.menu {
 	position: fixed;
 	right: 0;
 	width: 70%;
-	background-color: var(--hamburger-background);
+	background-color: var(--menu-background);
 	height: 100vh;
 	z-index: 1;
 	font-family: Inter;
 	font-weight: 500;
 	font-size: 18px;
+	transform: translateX(100vw);
+	transition: transform 0.5s ease;
 
 	&__flex-container {
 		display: flex;
@@ -33,7 +34,7 @@
 	}
 }
 
-.nav__list-hamburger {
+.nav__list-menu {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -41,6 +42,7 @@
 	row-gap: 20px;
 }
 
-.hamburger-active {
-	display: block;
+.menu-active {
+	transform: translateX(0);
+	transition: transform 0.5s ease;
 }

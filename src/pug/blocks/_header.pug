@@ -1,14 +1,14 @@
-+hamburger
++menu 
 .container 
-	header.header
+	header.header#Home
 		p.header__name-company FindPlace
 		nav.nav.header__nav
-			img.burger-nav(src="img/burger_nav.svg")
+			img#hamburger.burger-nav(src="img/burger_nav.svg")
 			.header__box-control
 				ul.nav__list
 					each item in links
 						li.nav__item
-							a.nav__link #{item}
+							a.nav__link(href=`#${item}`) #{item}
 				.header__select-languages.select-languages
 					img.select-languages__earth(src="img/earth.png", alt="earth")
 					p.select-languages__languages English
