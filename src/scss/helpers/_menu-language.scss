@@ -1,0 +1,35 @@
+.menu-language {
+	position: absolute;
+	font-family: Inter;
+	font-weight: 500;
+	font-size: 18px;
+	top: 37px;
+	left: 56px;
+	transition: all 0.5s ease-in;
+}
+
+.menu-language__list {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 20px;
+	width: 100px;
+	height: 150px;
+	background-color: #F7B48B;
+	border-radius: 20px
+}
+
+.menu-language__arrow {
+	position: absolute;
+	right: 30%;
+	top: -10%;
+	height: 0;
+	width: 0;
+	border-top: none;
+	border-bottom: 20px solid #F7B48B;
+	border-left: 20px dashed transparent;
+	border-right: 20px dashed transparent;
+	border-radius: 20px;
+	z-index: 1;
+}
