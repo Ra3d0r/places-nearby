@@ -3,33 +3,46 @@
 	font-family: Inter;
 	font-weight: 500;
 	font-size: 18px;
-	top: 37px;
-	left: 56px;
-	transition: all 0.5s ease-in;
+
+
+	&__list {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		gap: 20px;
+		width: 100px;
+		height: 150px;
+		background-color: var(--background-color-gray);
+		border-radius: 20px;
+		box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+	}
+
+	&__arrow {
+		position: absolute;
+		right: 30%;
+		top: -10%;
+		height: 0;
+		width: 0;
+		border-top: none;
+		border-bottom: 20px solid var(--background-color-gray);
+		border-left: 20px dashed transparent;
+		border-right: 20px dashed transparent;
+		border-radius: 20px;
+		z-index: 1;
+	}
+
+	&__link {
+		cursor: pointer;
+	}
 }
 
-.menu-language__list {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	gap: 20px;
-	width: 100px;
-	height: 150px;
-	background-color: #F7B48B;
-	border-radius: 20px
+.desktop {
+	top: 69px;
+	right: 102px;
 }
 
-.menu-language__arrow {
-	position: absolute;
-	right: 30%;
-	top: -10%;
-	height: 0;
-	width: 0;
-	border-top: none;
-	border-bottom: 20px solid #F7B48B;
-	border-left: 20px dashed transparent;
-	border-right: 20px dashed transparent;
-	border-radius: 20px;
-	z-index: 1;
+.mobile {
+	bottom: 5%;
+	right: 137px;
 }

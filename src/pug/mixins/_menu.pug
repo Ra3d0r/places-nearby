@@ -1,17 +1,17 @@
 mixin menu 
 	.menu#menu
 		+cross
+		.toggle-switch.menu__toggle
+			label.toggle-switch__label
+				input.toggle-switch__checkbox(type='checkbox')
+				span.toggle-switch__slider
 		.menu__flex-container
 			.menu__box-control
-						ul.nav__list-menu
-							each item in links
-								li.nav__item
-									a.nav__link #{item}
-						.menu__select-languages.select-languages
-							img.select-languages__earth(src="img/earth.png", alt="earth")
-							p.select-languages__languages English
-							img.select-languages__arrow(src="img/arrow.png", alt="arrow")
-						.toggle-switch.menu__toggle
-							label.toggle-switch__label
-								input.toggle-switch__checkbox(type='checkbox')
-								span.toggle-switch__slider
+				ul.nav__list-menu
+					each item in links
+						li.nav__item
+							a.nav__link #{item}
+				.menu__select-languages.select-languages#select-languages-mobile
+					img.select-languages__earth(src="img/earth.png", alt="earth")
+					p.select-languages__languages English
+					img.select-languages__arrow(src="img/arrow.png", alt="arrow")
