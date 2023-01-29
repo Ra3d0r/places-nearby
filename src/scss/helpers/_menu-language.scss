@@ -43,6 +43,11 @@
 }
 
 .mobile {
-	bottom: 5%;
-	right: 137px;
+
+	display: block;
+	transform: translateY(327px);
+
+	.menu-language__list {
+		gap: 30px;
+	}
 }
