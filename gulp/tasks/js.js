@@ -5,7 +5,10 @@ import concat from 'gulp-concat';
 
 export function js() {
 	return app.gulp
-		.src([`${app.path.folderScr}/js/helpers/index.js`])
+		.src([
+			`${app.path.folderScr}/js/index/index.js`,
+			`${app.path.folderScr}/js/index/*.js`,
+		])
 		.pipe(
 			app.plugins.plumber(
 				app.plugins.notify.onError({
@@ -14,6 +17,7 @@ export function js() {
 				})
 			)
 		)
+		.pipe(concat('index.js'))
 		.pipe(
 			babel({
 				presets: ['@babel/env'],
@@ -33,7 +37,8 @@ export function appJs() {
 	return app.gulp
 		.src([
 			`${app.path.folderScr}/js/app.js`,
-			`${app.path.folderScr}/js/helpers/*.js`,
+			`${app.path.folderScr}/js/index/*.js`,
+			`${app.path.folderScr}/js/app/*.js`,
 		])
 		.pipe(
 			app.plugins.plumber(
