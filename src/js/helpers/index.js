@@ -11,9 +11,9 @@ async function WebpIsSupported() {
 
 (async () => {
 	if (await WebpIsSupported()) {
-		document.querySelector('body').classList.add('webp');
+		document.body.classList.add('webp');
 	} else {
-		document.querySelector('body').classList.add('no-webp');
+		document.body.classList.add('no-webp');
 	}
 })();
 
@@ -24,16 +24,19 @@ async function WebpIsSupported() {
 	const selectLanguageMobile = document.querySelector(
 		'#select-languages-mobile'
 	);
+	const mod = document.querySelector('#mod');
 	attachEvents({
 		hamburger,
 		cross,
 		selectLanguage,
 		selectLanguageMobile,
+		mod,
 	});
+	initModeActive(mod);
 })();
 
 function attachEvents(objElements) {
-	const { hamburger, cross, selectLanguage, selectLanguageMobile } =
+	const { hamburger, cross, selectLanguage, selectLanguageMobile, mod } =
 		objElements;
 
 	hamburger.addEventListener('click', openMenu);
@@ -41,6 +44,8 @@ function attachEvents(objElements) {
 
 	selectLanguage.addEventListener('click', openSelectLanguage);
 	selectLanguageMobile.addEventListener('click', openSelectLanguage);
+
+	mod.addEventListener('click', handleMode);
 }
 
 function openMenu() {
@@ -53,16 +58,16 @@ function closeMenu() {
 
 function openSelectLanguage(event) {
 	const boxControl = event.target.parentElement.parentElement;
-	const menuOrHeader = checkClickSelectLanguage(boxControl);
-	if (!boxControl.lastChild.classList?.value.includes('menu-language')) {
-		const menuSelectLanguage = createMenuSelectLanguage(menuOrHeader);
+	const mobileOrDesktop = checkMobileClickSelectLanguage(boxControl);
+	const menuLanguage = document.querySelector('.menu-language');
+	if (!boxControl.contains(menuLanguage)) {
+		const menuSelectLanguage = createMenuSelectLanguage(mobileOrDesktop);
 		attachMenuLanguageEvents();
 		setInDom(boxControl, menuSelectLanguage);
 	}
 }
 
-function checkClickSelectLanguage(boxControl) {
-	console.log(boxControl.classList.value);
+function checkMobileClickSelectLanguage(boxControl) {
 	if (boxControl.classList.value.includes('header')) {
 		return 'desktop';
 	} else {
@@ -70,14 +75,14 @@ function checkClickSelectLanguage(boxControl) {
 	}
 }
 
-function createMenuSelectLanguage(menuOrHeader) {
+function createMenuSelectLanguage(mobileOrDesktop) {
 	const div = document.createElement('div');
 	div.innerHTML = `<div class="menu-language__arrow"></div> 
         <ul class="menu-language__list">
             <li class="menu-language__item"><a class="menu-language__link" id="Russian">Russian</a></li>
             <li class="menu-language__item"><a class="menu-language__link" id="English">English</a></li>
         </ul>`;
-	div.classList.add(`menu-language`, menuOrHeader);
+	div.classList.add(`menu-language`, mobileOrDesktop);
 	return div;
 }
 
@@ -102,6 +107,37 @@ function deleteMenuSelectLanguage() {
 
 function detachMenuLanguageEvents() {
 	document.removeEventListener('click', closeMenuSelectLanguage);
+}
+
+function handleMode(event) {
+	const darkMode = event.target.checked;
+	setAttributeMode(darkMode);
+	saveLocalStorage({ darkMode }, 'mode');
+}
+
+function saveLocalStorage(obj, key) {
+	localStorage.setItem(key, JSON.stringify(obj));
+}
+
+function getLocalStorage(key) {
+	return JSON.parse(localStorage.getItem(key));
+}
+
+function initModeActive(mod) {
+	const { darkMode } = getLocalStorage('mode');
+	if (darkMode === undefined || darkMode === null) {
+		return;
+	}
+	setAttributeMode(darkMode);
+	mod.checked = darkMode;
+}
+
+function setAttributeMode(darkMode) {
+	if (darkMode) {
+		document.body.setAttribute('data-theme', 'dark');
+	} else {
+		document.body.setAttribute('data-theme', 'light');
+	}
 }
 
 function setInDom(parentElement, element) {
