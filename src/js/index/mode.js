@@ -12,11 +12,13 @@ function setAttributeMode(darkMode) {
 	}
 }
 
-function initModeActive(mod) {
-	const { darkMode } = getLocalStorage('mode');
+function initModeActive(modEl) {
+	const mode = getLocalStorage('mode') || {};
+	const darkMode = mode?.darkMode;
+
 	if (darkMode === undefined || darkMode === null) {
 		return;
 	}
 	setAttributeMode(darkMode);
-	mod.checked = darkMode;
+	modEl.checked = darkMode;
 }
