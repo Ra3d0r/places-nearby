@@ -1,7 +1,5 @@
 function closeMenuSelectLanguage(event) {
-	const clickOutMenu =
-		event.target.classList.value !== 'menu-language__list' &&
-		event.target.classList.value !== 'select-languages__languages';
+	const clickOutMenu = !event.target.classList.value.includes('language');
 	if (clickOutMenu) {
 		deleteMenuSelectLanguage();
 	}
@@ -37,9 +35,16 @@ function checkMobileClickSelectLanguage(boxControl) {
 }
 
 function openSelectLanguage(event) {
-	const boxControl = event.target.parentElement.parentElement;
+	const boxControl =
+		event.target.parentElement.parentElement.classList.value.includes(
+			'select-languages'
+		)
+			? event.target.parentElement.parentElement.parentElement
+			: event.target.parentElement.parentElement;
+
 	const mobileOrDesktop = checkMobileClickSelectLanguage(boxControl);
 	const menuLanguage = document.querySelector('.menu-language');
+
 	if (!boxControl.contains(menuLanguage)) {
 		const menuSelectLanguage = createMenuSelectLanguage(mobileOrDesktop);
 		attachMenuLanguageEvents();
