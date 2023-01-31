@@ -46,3 +46,7 @@ function openSelectLanguage(event) {
 		setInDom(boxControl, menuSelectLanguage);
 	}
 }
+
+function attachMenuLanguageEvents() {
+	document.addEventListener('click', closeMenuSelectLanguage);
+}
