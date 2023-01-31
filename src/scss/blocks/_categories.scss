@@ -117,3 +117,11 @@
 		display: none;
 	}
 }
+
+body[data-theme="dark"] .background-categories {
+	display: none;
+}
+
+body[data-theme="dark"] .section-categories__categories {
+	background-color: var(--background-color-gray)
+}

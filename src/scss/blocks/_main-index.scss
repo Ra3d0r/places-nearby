@@ -2,7 +2,6 @@
 	margin-bottom: 246px;
 	position: relative;
 	@include total-padding;
-	background-color: var(--background-color-white);
 
 	@media (max-width: 567px) {
 		margin-bottom: calc(100% - 400px);

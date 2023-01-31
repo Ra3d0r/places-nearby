@@ -31,7 +31,7 @@
 
 
 // Глобальные переменные
-:root {
+body[data-theme="light"] {
 	--color-orange: #F96C61;
 	--color-orange-light: #FD6D61;
 	--color-hover-category: #EF5DA8;
@@ -41,6 +41,27 @@
 	--background-color-white: #FFFFFF;
 
 	--menu-background: #F7B48B;
+
+	--color-font: #000;
+}
+
+body[data-theme="dark"] {
+	--color-orange: #ec8973;
+	--color-orange-light: #d94d4a;
+	--color-hover-category: #EF5DA8;
+	--color-gray: #A5A6F6;
+
+	--background-color-gray: #3a3f49;
+	--background-color-white: #282c33;
+
+	--menu-background: #3a3f49;
+
+	--color-font: #bebebe;
+}
+
+body {
+	background-color: var(--background-color-white);
+	color: var(--color-font);
 }
 
 // Главные селекторы по тегам
@@ -52,5 +73,5 @@
 
 a {
 	text-decoration: none;
-	color: #000;
+	color: var(--color-font);
 }
