@@ -17,7 +17,8 @@ function initModeActive(modEl) {
 	const darkMode = mode?.darkMode;
 
 	if (darkMode === undefined || darkMode === null) {
-		return;
+		setAttributeMode(false);
+		modEl.checked = false;
 	}
 	setAttributeMode(darkMode);
 	modEl.checked = darkMode;

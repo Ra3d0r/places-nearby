@@ -6,19 +6,28 @@
 		'#select-languages-mobile'
 	);
 	const mod = document.querySelector('#mod');
+	const modMobile = document.querySelector('#mode-mobile');
 	attachEvents({
 		hamburger,
 		cross,
 		selectLanguage,
 		selectLanguageMobile,
 		mod,
+		modMobile,
 	});
 	initModeActive(mod);
+	initModeActive(modMobile);
 })();
 
 function attachEvents(objElements) {
-	const { hamburger, cross, selectLanguage, selectLanguageMobile, mod } =
-		objElements;
+	const {
+		hamburger,
+		cross,
+		selectLanguage,
+		selectLanguageMobile,
+		mod,
+		modMobile,
+	} = objElements;
 
 	hamburger.addEventListener('click', openMenu);
 	cross.addEventListener('click', closeMenu);
@@ -27,6 +36,7 @@ function attachEvents(objElements) {
 	selectLanguageMobile.addEventListener('click', openSelectLanguage);
 
 	mod.addEventListener('click', handleMode);
+	modMobile.addEventListener('click', handleMode);
 }
 
 function saveLocalStorage(obj, key) {
