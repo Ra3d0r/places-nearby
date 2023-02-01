@@ -1,6 +1,6 @@
 .toggle-switch {
 	--light: #d8dbe0;
-	--dark: #28292c;
+	--dark: var(--background-color-gray);
 }
 
 .toggle-switch {
@@ -15,6 +15,10 @@
 	background-color: var(--light);
 	border-radius: 50px;
 	cursor: pointer;
+}
+
+body[data-theme="dark"] .toggle-switch__label {
+	background-color: var(--dark);
 }
 
 .toggle-switch__checkbox {
