@@ -3,16 +3,16 @@
 	header.header#Home
 		p.header__name-company FindPlace
 		nav.nav.header__nav
-			img#hamburger.burger-nav(src="img/burger_nav.svg")
+			+burger-menu
 			.header__box-control
 				ul.nav__list
 					each item in links
 						li.nav__item
 							a.nav__link(href=`#${item}`) #{item}
 				.header__select-languages.select-languages#select-languages
-					img.select-languages__earth(src="img/earth.png", alt="earth")
+					+globe
 					p.select-languages__languages English
-					img.select-languages__arrow(src="img/arrow.png", alt="arrow")
+					+arrow-down
 				.toggle-switch.header__toggle
 					label.toggle-switch__label
 						input.toggle-switch__checkbox(type='checkbox')#mod

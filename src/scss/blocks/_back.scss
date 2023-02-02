@@ -12,6 +12,10 @@
 	cursor: pointer;
 	background-color: var(--background-color-white);
 
+	path {
+		fill: var(--color-hover-category)
+	}
+
 	&:hover {
 		path {
 			animation: moveUp 0.3s ease-in;
