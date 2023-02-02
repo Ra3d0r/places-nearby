@@ -10,8 +10,9 @@
 	&__categories {
 		position: relative;
 		height: 500px;
+		@include total-padding;
 
-		@media (max-width: 1080px) {
+		@media (max-width: 1111px) {
 			background-color: var(--background-color-gray);
 			height: 100%;
 		}
@@ -30,7 +31,7 @@
 		flex-wrap: wrap;
 		padding-top: 90px;
 
-		@media (max-width: 1080px) {
+		@media (max-width: 1111px) {
 			padding: 20px 0 20px 0;
 			justify-content: center;
 			gap: 20px;
@@ -58,6 +59,11 @@
 		height: 330px;
 		max-width: 270px;
 		width: 100%;
+
+		@media (max-width: 1111px) {
+			align-items: center;
+			text-align: center;
+		}
 
 		@media (max-width: 575px) {
 			align-items: center;
@@ -117,7 +123,7 @@
 	margin: auto;
 	z-index: -1;
 
-	@media (max-width: 1080px) {
+	@media (max-width: 1111px) {
 		display: none;
 	}
 }
