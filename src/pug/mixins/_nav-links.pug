@@ -1,5 +1,5 @@
-mixin nav-links
-	ul.nav__list
+mixin nav-links(prefix = '')
+	ul(class=`nav__list${prefix}`)
 		each item,i in links
 			li.nav__item
-				a.nav__link(href=`#${arr[i]}`) #{item}
+				a.nav__link(href=`${arr[i]}`) #{item}

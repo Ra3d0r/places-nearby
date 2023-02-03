@@ -7,10 +7,7 @@ mixin menu
 				span.toggle-switch__slider
 		.menu__flex-container
 			.menu__box-control
-				ul.nav__list-menu
-					each item in links
-						li.nav__item
-							a.nav__link #{item}
+				+nav-links('-menu')
 				.menu__select-languages.select-languages#select-languages-mobile
 					+globe
 					p.select-languages__languages English
