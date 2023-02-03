@@ -1,14 +1,11 @@
 +menu 
 .container 
-	header.header#Home
+	header.header#home
 		p.header__name-company FindPlace
 		nav.nav.header__nav
 			+burger-menu
 			.header__box-control
-				ul.nav__list
-					each item in links
-						li.nav__item
-							a.nav__link(href=`#${item}`) #{item}
+				+nav-links
 				.header__select-languages.select-languages#select-languages
 					+globe
 					p.select-languages__languages English
