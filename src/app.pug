@@ -1,12 +1,11 @@
 extends  ./pug/layout
 
 block head
-	title A Specific Page of My Website
+	title FindPlace
 	+links('style')
+	+scripts('app')
 
 block content
-	p Hello World!
+	include ./pug/blocks/_header
 
 
-
-	+scripts('app')
