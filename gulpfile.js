@@ -32,6 +32,7 @@ function watcher() {
 	gulp.watch(path.watch.html, html);
 	gulp.watch(path.watch.scss, scss);
 	gulp.watch(path.watch.js, js);
+	gulp.watch(path.watch.js, appJs);
 }
 
 // Преобразование шрифтов otf в ttf и ttf в woff и woff2

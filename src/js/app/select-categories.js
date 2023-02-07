@@ -1,4 +1,5 @@
-function toggleSelectCategories() {
+function toggleSelectCategories(event) {
+	const optionMenu = event.target.parentElement;
 	optionMenu.classList.toggle('active');
 }
 
