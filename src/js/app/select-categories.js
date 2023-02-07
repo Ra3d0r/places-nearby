@@ -1,11 +1,12 @@
 function toggleSelectCategories(event) {
-	const optionMenu = event.target.parentElement;
+	const optionMenu = event.currentTarget;
 	optionMenu.classList.toggle('active');
 }
 
 function handleSelectCategories() {
-	let selectedOption = option.querySelector('.option-text').innerText;
-	sBtn_text.innerText = selectedOption;
+	const selectedOption = this.innerText;
+	const optionMenu = this.parentElement.parentElement;
+	const sBtnText = optionMenu.querySelector('.sBtn-text');
 
-	optionMenu.classList.remove('active');
+	sBtnText.innerText = selectedOption;
 }
