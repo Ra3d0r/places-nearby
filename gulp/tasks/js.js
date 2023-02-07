@@ -36,9 +36,9 @@ export function js() {
 export function appJs() {
 	return app.gulp
 		.src([
+			`${app.path.folderScr}/js/app/*.js`,
 			`${app.path.folderScr}/js/app.js`,
 			`${app.path.folderScr}/js/index/*.js`,
-			`${app.path.folderScr}/js/app/*.js`,
 		])
 		.pipe(
 			app.plugins.plumber(
