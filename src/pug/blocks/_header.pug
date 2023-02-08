@@ -1,6 +1,6 @@
 +menu 
 .container 
-	header.header#home
+	header(class=`header${isApp ? ' margin-app' : ''}` id="home")
 		p.header__name-company FindPlace
 		nav.nav.header__nav
 			+burger-menu
