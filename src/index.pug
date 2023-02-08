@@ -6,7 +6,7 @@ block head
 	+scripts('index')
 
 block content
-	-const arr = ['#home', '#categories', '#about'];
+	include ./pug/variables/_index
 	include ./pug/blocks/_header
 	include ./pug/blocks/_main-index
 	include ./pug/blocks/_categories
