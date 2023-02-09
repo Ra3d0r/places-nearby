@@ -1,2 +1,9 @@
-mixin filter
-	
+mixin filter(texts = [], id = [])
+	.filter
+		.filter__title
+			+columns
+			span.filter__text Filter By
+		.filter__checkbox
+			each text, i in texts
+				input(id=`${id[i]}` name='scales' type='checkbox')
+				label(for='scales')= text

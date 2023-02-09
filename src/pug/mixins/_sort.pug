@@ -1,0 +1,8 @@
+mixin sort(orders = [])
+	.sort
+		.sort__title
+			+sort-ico
+			span.sort__text Sort By
+		ul.sort__list
+			each order in orders
+				li.sorts__order= order

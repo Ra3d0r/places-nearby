@@ -1,9 +1,18 @@
--const textCategories = 'Just write the name of the street'
+-const textSelectCategories = 'Select your option'
+-const categories = ['Text1', 'test2']
+
+-const textFilters = ['text', 'text2']
+-const idFilters = ['filter1', 'filter2']
+
+-const textSort = ['textSrt1', 'textSrt2']
 
 .search-section
 	.container
 		.search-section__container-title
-			+select-categories(['Text1', 'test2'], 'Select your option')
-			h1.search-section__title.title-categories= textCategories 
+			+select-categories(categories, textSelectCategories)
+			h1.search-section__title.title-categories Just write the name of the street
 		.search-section__search
 			+search
+		.search-section__control-panel
+			+filter(textFilters, idFilters)
+			+sort(textSort)
