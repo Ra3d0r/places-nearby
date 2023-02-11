@@ -7,7 +7,7 @@ $width: 330px;
 	.select-btn {
 		display: flex;
 		height: 55px;
-		background: #fff;
+		background: var(--background-color-gray);
 		padding: 20px;
 		font-size: 18px;
 		font-weight: 400;
@@ -16,6 +16,12 @@ $width: 330px;
 		cursor: pointer;
 		justify-content: space-between;
 		box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+		.arrow-down {
+			path {
+				fill: var(--color-font);
+			}
+		}
 	}
 
 	.options {
@@ -26,7 +32,7 @@ $width: 330px;
 		padding: 10px;
 		margin-top: 10px;
 		border-radius: 8px;
-		background: #fff;
+		background: var(--background-color-gray);
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 		animation-name: fadeInDown;
 		-webkit-animation-name: fadeInDown;
@@ -43,7 +49,7 @@ $width: 330px;
 			padding: 0 16px;
 			border-radius: 8px;
 			align-items: center;
-			background: #fff;
+			background: var(--background-color-gray);
 
 			&:hover {
 				background: #f2f2f2;
@@ -57,7 +63,7 @@ $width: 330px;
 
 			.option-text {
 				font-size: 18px;
-				color: #333;
+				color: var(--color-font);
 			}
 		}
 	}

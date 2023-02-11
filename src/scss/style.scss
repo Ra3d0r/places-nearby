@@ -21,6 +21,7 @@
 @import "helpers/_menu.scss";
 @import "helpers/_menu-language.scss";
 @import "helpers/_select-categories.scss";
+@import "helpers/_filter.scss";
 
 
 // Глобальный контейнер
@@ -45,8 +46,10 @@ body[data-theme="light"] {
 	--menu-background: #a8abb1;
 
 	--color-font: #000;
+	--color-font-white: #fff;
 
 	--color-focus-loupe: #edebeb;
+	--color-violet: #693DE7;
 }
 
 body[data-theme="dark"] {
@@ -61,8 +64,10 @@ body[data-theme="dark"] {
 	--menu-background: #3a3f49;
 
 	--color-font: #bebebe;
+	--color-font-white: #fff;
 
 	--color-focus-loupe: #31343a;
+	--color-violet: #6d29db;
 }
 
 body {

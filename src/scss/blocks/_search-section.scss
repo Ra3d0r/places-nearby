@@ -13,6 +13,7 @@
 	&__search {
 		display: flex;
 		justify-content: center;
+		margin-bottom: 50px;
 	}
 
 	&__control-panel {
@@ -44,6 +45,7 @@
 		border-top-right-radius: 8px 8px;
 		border: 1px solid var(--background-color-gray);
 		outline: 0;
+		caret-color: var(--color-font)
 	}
 
 	&__btn {
@@ -59,23 +61,51 @@
 			background: var(--color-focus-loupe);
 		}
 	}
+
+	&__loupe {
+		path {
+			fill: var(--color-font);
+		}
+	}
 }
 
 .sort {
 	display: flex;
 	justify-content: space-between;
+	column-gap: 10px;
 	min-width: 210px;
+	box-shadow: 0px 3.99276px 11.9783px rgba(105, 61, 231, 0.2);
+	background-color: var(--background-color-gray);
+	border-radius: 10px;
+
+	&__title {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		column-gap: 5px;
+		padding: 10px;
+		border-radius: 10px;
+		background-color: var(--color-violet);
+		color: var(--color-font-white);
+		font-family: 'Inter';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 18px;
+
+	}
 
 	&__list {
 		display: inline-flex;
-		align-items: flex-end;
-		gap: 5px;
-	}
-}
+		align-items: center;
+		gap: 15px;
+		padding: 10px;
+		font-family: 'Inter';
+		font-style: normal;
+		font-weight: 600;
+		font-size: 16px;
 
-.filter {
-	display: flex;
-	align-items: baseline;
-	justify-content: space-between;
-	min-width: 200px;
+		&:hover {
+			cursor: pointer;
+		}
+	}
 }

@@ -5,5 +5,5 @@ mixin filter(texts = [], id = [])
 			span.filter__text Filter By
 		.filter__checkbox
 			each text, i in texts
-				input(id=`${id[i]}` name='scales' type='checkbox')
-				label(for='scales')= text
+				input(id=`${id[i]}` name=`${text}` type='checkbox')
+				label(for=`${id[i]}`)= text
