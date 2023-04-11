@@ -1,0 +1,35 @@
+body[data-theme="light"] {
+	--color-orange: #F96C61;
+	--color-orange-light: #FD6D61;
+	--color-hover-category: #EF5DA8;
+	--color-gray: #A5A6F6;
+
+	--background-color-gray: rgba(239, 239, 239, 0.83);
+	--background-color-white: #FFFFFF;
+
+	--menu-background: #a8abb1;
+
+	--color-font: #000;
+	--color-font-white: #fff;
+
+	--color-focus-loupe: #edebeb;
+	--color-violet: #693DE7;
+}
+
+body[data-theme="dark"] {
+	--color-orange: #d2483e;
+	--color-orange-light: #da7467;
+	--color-hover-category: #ef6e5d;
+	--color-gray: #A5A6F6;
+
+	--background-color-gray: #292c31;
+	--background-color-white: #1e2024;
+
+	--menu-background: #3a3f49;
+
+	--color-font: #bebebe;
+	--color-font-white: #fff;
+
+	--color-focus-loupe: #31343a;
+	--color-violet: #884ee7;
+}

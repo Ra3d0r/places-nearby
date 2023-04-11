@@ -1,6 +1,6 @@
 (function initApp() {
-	const optionMenu = document.querySelector('.select-categories'),
-		options = optionMenu.querySelectorAll('.option');
+	const optionMenu = document.querySelector('.select-categories');
+	const options = optionMenu.querySelectorAll('.option');
 
 	const selectCategories = {
 		optionMenu,

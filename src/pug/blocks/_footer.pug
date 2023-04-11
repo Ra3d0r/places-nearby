@@ -6,6 +6,6 @@ footer
 					span.main-button__text FIND THE PLACE
 			.footer__nav
 				ul.nav__list-footer
-						each item in links
+						each item,i in links
 							li.nav__item-footer
-								a.nav__link-footer(href=`#${item}`) #{item}
+								a.nav__link-footer(href=`${arr[i]}`) #{item}

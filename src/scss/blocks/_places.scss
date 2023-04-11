@@ -1,0 +1,9 @@
+.section-places {
+	@include total-padding;
+
+	&__grid-container {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+		gap: 20px;
+	}
+}
