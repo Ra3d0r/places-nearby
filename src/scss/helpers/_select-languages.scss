@@ -1,0 +1,25 @@
+.select-languages {
+	display: flex;
+	justify-content: space-between;
+	max-width: 112px;
+	width: 100%;
+	padding-top: 7px;
+	cursor: pointer;
+
+	&__earth {
+		transform: translateY(-2px);
+		width: 20px;
+		height: 20px;
+	}
+
+	&__arrow {
+		width: 15px;
+		height: 15px;
+		transform: translateY(2px);
+
+		path {
+			fill: var(--color-font);
+		}
+	}
+
+}

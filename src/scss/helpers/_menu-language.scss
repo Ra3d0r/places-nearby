@@ -3,7 +3,7 @@
 	font-family: Inter;
 	font-weight: 500;
 	font-size: 18px;
-
+	z-index: $ui-index1;
 
 	&__list {
 		display: flex;
@@ -16,6 +16,7 @@
 		background-color: var(--background-color-gray);
 		border-radius: 20px;
 		box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+
 	}
 
 	&__arrow {
@@ -29,7 +30,7 @@
 		border-left: 20px dashed transparent;
 		border-right: 20px dashed transparent;
 		border-radius: 20px;
-		z-index: 1;
+		z-index: $ui-index1;
 	}
 
 	&__link {

@@ -52,6 +52,10 @@
 		border-width: 1px;
 		color: var(--color-violet);
 		cursor: pointer;
+
+		&:hover {
+			background-color: var(--background-color-white);
+		}
 	}
 
 }

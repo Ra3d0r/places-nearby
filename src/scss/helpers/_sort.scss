@@ -1,0 +1,40 @@
+.sort {
+	display: flex;
+	justify-content: space-between;
+	column-gap: 10px;
+	min-width: 210px;
+	box-shadow: 0px 3.99276px 11.9783px rgba(105, 61, 231, 0.2);
+	background-color: var(--background-color-gray);
+	border-radius: 10px;
+
+	&__title {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		column-gap: 5px;
+		padding: 10px;
+		border-radius: 10px;
+		background-color: var(--color-violet);
+		color: var(--color-font-white);
+		font-family: 'Inter';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 18px;
+
+	}
+
+	&__list {
+		display: inline-flex;
+		align-items: center;
+		gap: 15px;
+		padding: 10px;
+		font-family: 'Inter';
+		font-style: normal;
+		font-weight: 600;
+		font-size: 16px;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}

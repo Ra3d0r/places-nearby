@@ -4,6 +4,8 @@
 @import "config/_fonts.scss";
 @import "config/_mixins.scss";
 @import "config/_theme.scss";
+@import "config/_variables.scss";
+@import "config/_selectors.scss";
 
 // Подключение блоков
 @import "blocks/_header.scss";
@@ -25,32 +27,11 @@
 @import "helpers/_select-categories.scss";
 @import "helpers/_filter.scss";
 @import "helpers/_place.scss";
-
-
-// Глобальный контейнер
-.container {
-	max-width: 1240px;
-	width: 100%;
-	margin: 0 auto;
-	overflow: hidden;
-}
-
-
-// Глобальные переменные
-
-body {
-	background-color: var(--background-color-white);
-	color: var(--color-font);
-}
-
-// Главные селекторы по тегам
-
-* {
-	scroll-behavior: smooth;
-	box-sizing: border-box;
-}
-
-a {
-	text-decoration: none;
-	color: var(--color-font);
-}
+@import "helpers/_sort.scss";
+@import "helpers/_category.scss";
+@import "helpers/_description.scss";
+@import "helpers/_select-languages.scss";
+@import "helpers/_burger.scss";
+@import "helpers/_target-action.scss";
+@import "helpers/_road.scss";
+@import "helpers/_search.scss";

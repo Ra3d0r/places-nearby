@@ -1,0 +1,14 @@
+.burger-nav {
+	display: none;
+	width: 55px;
+	height: 61px;
+
+	path {
+		fill: var(--color-font);
+	}
+
+	@media (max-width: 805px) {
+		display: block;
+		cursor: pointer
+	}
+}
