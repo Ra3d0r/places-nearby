@@ -15,8 +15,8 @@
 		mod,
 		modMobile,
 	});
-	initModeActive(mod);
-	initModeActive(modMobile);
+	handleInitTheme(mod, modMobile);
+	initWebp();
 })();
 
 function attachEvents(objElements) {
@@ -35,16 +35,27 @@ function attachEvents(objElements) {
 	selectLanguage.addEventListener('click', openSelectLanguage);
 	selectLanguageMobile.addEventListener('click', openSelectLanguage);
 
-	mod.addEventListener('click', handleMode);
-	modMobile.addEventListener('click', handleMode);
+	mod.addEventListener('click', handleTheme);
+	modMobile.addEventListener('click', handleTheme);
 }
 
 function saveLocalStorage(obj, key) {
-	localStorage.setItem(key, JSON.stringify(obj));
+	try {
+		localStorage.setItem(key, JSON.stringify(obj));
+		return 'OK';
+	} catch (err) {
+		console.log(err);
+		return null;
+	}
 }
 
 function getLocalStorage(key) {
-	return JSON.parse(localStorage.getItem(key));
+	try {
+		return JSON.parse(localStorage.getItem(key));
+	} catch (err) {
+		console.log(err);
+		return null;
+	}
 }
 
 function setInDom(parentElement, element) {

@@ -9,10 +9,23 @@ async function WebpIsSupported() {
 	);
 }
 
-(async () => {
-	if (await WebpIsSupported()) {
+function setClassWebp(isSupported) {
+	if (isSupported) {
 		document.body.classList.add('webp');
 	} else {
 		document.body.classList.add('no-webp');
 	}
-})();
+}
+
+async function initWebp() {
+	const webp = getLocalStorage('webp');
+
+	if (webp === null || webp === undefined) {
+		const isSupported = await WebpIsSupported();
+		setClassWebp(isSupported);
+		saveLocalStorage(isSupported, 'webp');
+		return;
+	}
+
+	setClassWebp(webp);
+}
