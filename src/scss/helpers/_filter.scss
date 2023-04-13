@@ -63,28 +63,28 @@
 		}
 
 		input:checked+label::before {
-			border-color: var(--color-violet);
-			background-color: var(--color-violet);
+			border-color: var(--background-color-active);
+			background-color: var(--background-color-active);
 			background-image: url('../img/check.svg');
 		}
 
 		input:not(:disabled):not(:checked)+label:hover::before {
-			border-color: var(--color-violet);
+			border-color: var(--background-color-active);
 		}
 
 
 		input:focus+label::before {
-			box-shadow: 0 0 0 0.1px var(--color-violet);
+			box-shadow: 0 0 0 0.1px var(--background-color-active);
 		}
 
 
 		input:focus:not(:checked)+label::before {
-			border-color: var(--color-violet);
+			border-color: var(--background-color-active);
 		}
 
 
 		input:disabled+label::before {
-			background-color: var(--color-font-white);
+			background-color: var(--background-color-active);
 		}
 	}
 }

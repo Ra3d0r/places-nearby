@@ -32,9 +32,35 @@
 		font-style: normal;
 		font-weight: 600;
 		font-size: 16px;
+	}
+
+	&__input {
+		position: absolute;
+		clip: rect(0, 0, 0, 0);
+		height: 1px;
+		width: 1px;
+		border: 0;
+		overflow: hidden;
+
+		&:checked+.sort__label {
+			color: var(--color-font-white);
+			background-color: var(--background-color-active);
+			border-radius: 10px;
+		}
+	}
+
+	&__label {
+		color: var(--color-font);
+		font-size: 14px;
+		line-height: 1;
+		text-align: center;
+		padding: 10px 16px;
+		transition: all 0.1s ease-in-out;
 
 		&:hover {
 			cursor: pointer;
+			background-color: var(--color-hover-app);
+			border-radius: 10px;
 		}
 	}
 }
