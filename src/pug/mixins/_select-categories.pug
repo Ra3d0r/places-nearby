@@ -1,10 +1,10 @@
-mixin select-categories(selects , text = 'Select your option')
+mixin select-categories(selects, dataCategories , text = 'Select your option')
 	-selects = selects || []
 	.select-categories
 		.select-btn
-			span.sBtn-text= text
+			span.sBtn-text(data-category=dataCategories[0])= text
 			+arrow-down('arrow-down')
 		ul.options
-			each selectName in selects
-				li.option
+			each selectName, i in selects
+				li.option(data-category=dataCategories[i])
 					span.option-text #{selectName}

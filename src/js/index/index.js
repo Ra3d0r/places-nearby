@@ -59,5 +59,12 @@ function getLocalStorage(key) {
 }
 
 function setInDom(parentElement, element) {
+	if (parentElement === null) {
+		throw new Error('Родительский элемент не определен');
+	}
+
+	if (element === null || element === undefined) {
+		throw new Error('Созданный элемент является пустым');
+	}
 	parentElement.append(element);
 }
