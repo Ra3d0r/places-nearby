@@ -1,6 +1,6 @@
 async function handleRequest(city) {
-	const category = document.querySelector('.sBtn-text').dataset.category;
 	const geo = await getGeo(city);
+	const category = document.querySelector('.sBtn-text').dataset.category;
 	geo.category = category;
 
 	const places = await getPlaces(geo);

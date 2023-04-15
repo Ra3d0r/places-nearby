@@ -6,4 +6,8 @@
 		grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
 		gap: 20px;
 	}
+
+	&__grid-container.block {
+		display: block;
+	}
 }

@@ -1,5 +1,11 @@
 const store = {
 	entities: [],
+	root: document.querySelector('.section-places__grid-container'),
+};
+
+const selectors = {
+	places: () => store.entities,
+	placeByXid: (xid) => store.entities.find((place) => place.xid === xid),
 };
 
 (function initApp() {
@@ -34,7 +40,7 @@ function attachEventsApp(selectCategories, search) {
 	const { inputSearch, buttonSearch } = search;
 
 	buttonSearch.addEventListener('click', () => {
-		handleSearchClick(inputSearch.value);
+		handleSearchClick(inputSearch);
 	});
 	inputSearch.addEventListener('keyup', handleSearchKeyUp);
 }
