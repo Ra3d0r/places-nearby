@@ -16,6 +16,7 @@
 @import "blocks/_footer.scss";
 @import "blocks/_search-section.scss";
 @import "blocks/_places.scss";
+@import "blocks/_placeItem-section.scss";
 
 // Подключение общих элементов
 @import "helpers/_toggle-btn.scss";
@@ -36,3 +37,4 @@
 @import "helpers/_road.scss";
 @import "helpers/_search.scss";
 @import "helpers/_loading.scss";
+@import "helpers/_place-item.scss";

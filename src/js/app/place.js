@@ -16,10 +16,10 @@ function createPlace({ name, kinds, rate, xid, info }) {
 			? createNameCategory(kinds).slice(0, -15)
 			: createNameCategory(kinds)
 	}...`}</div>
-    <button class="place__button">get more</button>
 	</div>
 	`;
-	place.dataset.xid = xid;
+	const button = createPlaceButton('place__button', xid);
+	place.querySelector('.place__container-text').append(button);
 	return place;
 }
 
@@ -41,4 +41,24 @@ function nameCategory(category) {
 		default:
 			return category;
 	}
+}
+
+function createPlaceButton(className, xid) {
+	const button = document.createElement('button');
+	button.classList.add(className);
+	button.textContent = 'get more';
+	button.dataset.xid = xid;
+	button.addEventListener('click', handlePlaceButton);
+	return button;
+}
+
+function handlePlaceButton(event) {
+	detachEventPlaces();
+	startRenderPlaceInfo(event.target.dataset.xid);
+}
+
+function detachEventPlaces() {
+	store.root.querySelectorAll('.place__button').forEach((button) => {
+		button.removeEventListener('click', handlePlaceButton);
+	});
 }

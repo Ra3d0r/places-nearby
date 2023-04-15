@@ -12,6 +12,7 @@
 	border: 0;
 	background: var(--color-orange-light);
 	cursor: pointer;
+	font-family: Inter;
 
 	&:hover {
 		background: lighten($color, 1%);
@@ -20,4 +21,9 @@
 	&__text {
 		color: #ffff;
 	}
+}
+
+.main-button_mini {
+	width: 90px;
+	height: 30px;
 }

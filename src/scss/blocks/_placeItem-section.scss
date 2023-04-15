@@ -1,0 +1,12 @@
+.placeItem-section {
+	&__button {
+		@include total-padding;
+		margin-bottom: 2rem;
+	}
+
+	&__place-item-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+}
