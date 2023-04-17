@@ -20,7 +20,9 @@ function startRenderPlaceInfo(xid) {
 	clearAllChields(store.root);
 	document.querySelector('.search-section').classList.add('hidden');
 	store.root.classList.add('block');
-	renderPlaceInfo(selectors.placeByXid(xid));
+	const place = selectors.placeByXid(xid);
+	renderPlaceInfo(place.info);
+	createMap(place);
 }
 
 function renderPlaces(places) {

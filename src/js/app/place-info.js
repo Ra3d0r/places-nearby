@@ -1,23 +1,33 @@
-function createPlaceInfo({ info: { name, wikipedia_extracts, preview } }) {
+function createPlaceInfo({ name, wikipedia_extracts, preview, address }) {
 	const description = wikipedia_extracts?.html || 'Description none';
 	const source = preview?.source || 'https://placehold.co/400';
+	const strAddress = makeAddress(address);
 
 	const section = document.createElement('div');
 	section.classList.add('placeItem-section');
-	section.innerHTML = `<div class="container">
-            <div class="placeItem-section__button">
-            </div>
-            <div class="placeItem-section__place-item-container">
-              <div class="place-item">
-                <div class="place-item__container-image"><img class="place-item__img" src=${source} alt="place" width="400" height="300"/></div>
-                <div class="place-item__text">
-                  <h1 class="place-item__title">${name}</h1>
-                  <div class="place-item__description">${description}</div>
-                </div>
-              </div>
-            </div>
-            <div class="placeItem-section__map" id="map"></div>
-          </div>`;
+	section.innerHTML = `<div class="placeItem-section__button"></div>
+		<div class="placeItem-section__place-item-container">
+			<div class="place-item">
+				<div class="place-item__container-image">
+					<img
+						class="place-item__img"
+						src=${source}
+						alt="place"
+						width="400"
+						height="300"
+					/>
+				</div>
+				<div class="place-item__text">
+					<h1 class="place-item__title">${name}</h1>
+					<div class="place-item__description">${description}</div>
+				</div>
+				<div class="place-item__map-container">
+					<h3 class="place-item__subtitle">Location on the map</h3>
+					<div id="map"></div>
+					<h2 class="place-item__address">${strAddress}</h2>
+				</div>
+			</div>
+		</div> `;
 	const button = createPlaceInfoButton();
 	section.querySelector('.placeItem-section__button').append(button);
 	return section;
@@ -29,6 +39,38 @@ function createPlaceInfoButton() {
 	button.innerHTML = `<span class="main-button__text">BACK</span>`;
 	button.addEventListener('click', backToPlaces);
 	return button;
+}
+
+function makeAddress(address) {
+	const {
+		country,
+		city,
+		state_district,
+		state,
+		suburb,
+		house,
+		house_number,
+		road,
+	} = address;
+	const validCity = city === state ? city : state;
+	const arrStringAddress = [
+		country,
+		validCity,
+		state_district,
+		road,
+		suburb,
+		house,
+		house_number,
+	];
+	const stringAddress = arrStringAddress
+		.reduce((acc, el) => {
+			if (el) {
+				acc += `${el}, `;
+			}
+			return acc;
+		}, '')
+		.slice(0, -2);
+	return stringAddress;
 }
 
 function backToPlaces(event) {

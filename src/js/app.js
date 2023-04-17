@@ -1,6 +1,6 @@
 const store = {
 	entities: [],
-	root: document.querySelector('.section-places__grid-container'),
+	root: document.querySelector('#root'),
 };
 
 const selectors = {
