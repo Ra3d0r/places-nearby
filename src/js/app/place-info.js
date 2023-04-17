@@ -1,6 +1,6 @@
 function createPlaceInfo({ name, wikipedia_extracts, preview, address }) {
 	const description = wikipedia_extracts?.html || 'Description none';
-	const source = preview?.source || 'https://placehold.co/400';
+	const source = preview?.source || '/img/place.png';
 	const strAddress = makeAddress(address);
 
 	const section = document.createElement('div');

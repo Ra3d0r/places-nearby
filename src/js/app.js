@@ -1,11 +1,15 @@
 const store = {
-	entities: [],
+	entities: {
+		places: [],
+		render: [],
+	},
 	root: document.querySelector('#root'),
 };
 
 const selectors = {
-	places: () => store.entities,
-	placeByXid: (xid) => store.entities.find((place) => place.xid === xid),
+	places: () => store.entities.render,
+	placeByXid: (xid) =>
+		store.entities.render.find((place) => place.xid === xid),
 };
 
 (function initApp() {

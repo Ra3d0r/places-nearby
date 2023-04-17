@@ -1,5 +1,5 @@
 function createPlace({ name, kinds, rate, xid, info }) {
-	const source = info.preview?.source || 'https://placehold.co/400';
+	const source = info.preview?.source || '/img/place.png';
 
 	const place = document.createElement('div');
 	place.classList.add('place');
@@ -33,7 +33,7 @@ function createPlace({ name, kinds, rate, xid, info }) {
 			<div class="place__categories">
 				${`${
 					kinds.length > 46
-						? createNameCategory(kinds).slice(0, -15)
+						? createNameCategory(kinds).slice(0, -kinds.length + 46)
 						: createNameCategory(kinds)
 				}...`}
 			</div>

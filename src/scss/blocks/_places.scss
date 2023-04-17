@@ -8,6 +8,7 @@
 	}
 
 	&__grid-container.block {
-		display: block;
+		display: flex;
+		justify-content: center;
 	}
 }
