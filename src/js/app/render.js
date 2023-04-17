@@ -1,38 +1,52 @@
 function initRender(value) {
 	handleRequest(value).then(() => {
-		clearAllChields(store.root);
-		store.root.classList.remove('block');
+		preparationRenderPlaces();
 		renderPlaces(selectors.places());
+		setInDom(store.root, createPagination());
 	});
-	clearAllChields(store.root);
-	store.root.classList.add('block');
-	setInDom(store.root, createLoading());
+	renderLoading();
 }
 
 function startRenderPlaces() {
-	clearAllChields(store.root);
-	store.root.classList.remove('block');
-	document.querySelector('.search-section').classList.remove('hidden');
+	preparationRenderPlaces();
 	renderPlaces(selectors.places());
+	setInDom(store.root, createPagination());
 }
 
 function startRenderPlaceInfo(xid) {
-	clearAllChields(store.root);
-	document.querySelector('.search-section').classList.add('hidden');
-	store.root.classList.add('block');
+	preparationRenderPlaceInfo();
 	const place = selectors.placeByXid(xid);
 	renderPlaceInfo(place.info);
 	createMap(place);
+}
+
+function preparationRenderPlaces() {
+	clearAllChields(store.root);
+	document.querySelector('.search-section').classList.remove('hidden');
+}
+
+function preparationRenderPlaceInfo() {
+	clearAllChields(store.root);
+	document.querySelector('.search-section').classList.add('hidden');
+}
+
+function renderLoading() {
+	clearAllChields(store.root);
+	setInDom(store.root, createLoading());
 }
 
 function renderPlaces(places) {
 	if (!Array.isArray(places)) {
 		throw new Error('В функцию рендера нескольких мест передан не массив');
 	}
+	const container = document.createElement('div');
+	container.classList.add('section-places__grid-container');
 
 	places.forEach((place) => {
-		setInDom(store.root, createPlace(place));
+		container.append(createPlace(place));
 	});
+
+	setInDom(store.root, container);
 }
 
 function renderPlaceInfo(place) {

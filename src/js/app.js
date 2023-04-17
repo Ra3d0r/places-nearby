@@ -4,6 +4,7 @@ const store = {
 		render: [],
 	},
 	root: document.querySelector('#root'),
+	activePages: 1,
 };
 
 const selectors = {
