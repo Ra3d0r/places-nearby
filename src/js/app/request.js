@@ -5,7 +5,7 @@ async function handleRequest(city) {
 
 	const places = await getPlaces(geo);
 	store.entities.places = places;
-	const infoPlaces = await handleInfoPlaces(places, 8);
+	const infoPlaces = await handleInfoPlaces(places, 0, 8);
 	store.entities.render = infoPlaces;
 }
 
@@ -21,23 +21,27 @@ async function getPlaces(geo) {
 	return data;
 }
 
-async function handleInfoPlaces(places, qty) {
+async function handleInfoPlaces(places, start, qty) {
 	const newPlaces = [];
+	const generator = generatorInfoPlaces(places, start, qty);
+	let infoPlace = null;
 
-	for (let i = 0; i < qty; i++) {
-		const place = places.shift();
-		const infoPlace = await getInfoPlace(place.xid);
-		if (!infoPlace) {
-			i--;
-			continue;
-		}
-		newPlaces.push({
-			...place,
-			info: infoPlace,
-		});
+	while (!(infoPlace = await generator.next()).done) {
+		newPlaces.push(infoPlace.value);
 	}
 
 	return newPlaces;
+}
+
+async function* generatorInfoPlaces(places, start, qty) {
+	for (let i = start; i < qty; i++) {
+		await new Promise((resolve) => setTimeout(resolve, 100));
+		const infoPlace = await getInfoPlace(places[i].xid);
+		yield {
+			...places[i],
+			info: infoPlace,
+		};
+	}
 }
 
 async function getInfoPlace(xid) {
