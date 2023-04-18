@@ -1,16 +1,33 @@
 const store = {
 	entities: {
 		places: [],
-		render: [],
+		render: {
+			1: [],
+			all: [],
+		},
 	},
 	root: document.querySelector('#root'),
 	activePages: 1,
+	pagination: {
+		1: [0, 8], // Начало массива мест, конец массива
+		2: [8, 16],
+		3: [16, 24],
+		4: [24, 32],
+		5: [32, 40],
+		6: [40, 48],
+		7: [48, 56],
+		8: [56, 64],
+	},
+	status: 'idle',
 };
 
 const selectors = {
-	places: () => store.entities.render,
+	places: () => store.entities.render.all,
 	placeByXid: (xid) =>
-		store.entities.render.find((place) => place.xid === xid),
+		store.entities.render.all.find((place) => place.xid === xid),
+	placesByPages: (pages) => {
+		return store.entities.render[pages];
+	},
 };
 
 (function initApp() {

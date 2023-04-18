@@ -57,5 +57,24 @@ function createPagination() {
 			${store.activePages === 8 ? 'checked' : ''}
 		/>
 		<label class="label-8" for="toggle-8">8</label>`;
+	pagination.querySelectorAll('input').forEach((input) => {
+		input.addEventListener('click', handlePagination);
+	});
 	return pagination;
+}
+
+function handlePagination() {
+	const id = Number(this.id.split('-')[1]);
+	if (store.activePages === id) {
+		return;
+	}
+	store.activePages = id;
+	getCurrentPages(id);
+	detachEventPagination(this.parentElement);
+}
+
+function detachEventPagination(parent) {
+	parent.querySelectorAll('input').forEach((input) => {
+		input.removeEventListener('click', handlePagination);
+	});
 }

@@ -1,5 +1,6 @@
-function createPlaceInfo({ name, wikipedia_extracts, preview, address }) {
-	const description = wikipedia_extracts?.html || 'Description none';
+function createPlaceInfo({ name, wikipedia_extracts, preview, address, info }) {
+	const description =
+		wikipedia_extracts?.html || info?.descr || 'Description none';
 	const source = preview?.source || '/img/place.png';
 	const strAddress = makeAddress(address);
 
@@ -52,7 +53,7 @@ function makeAddress(address) {
 		house_number,
 		road,
 	} = address;
-	const validCity = city === state ? city : state;
+	const validCity = city === state ? city : `${state || ''}, ${city || ''}`;
 	const arrStringAddress = [
 		country,
 		validCity,
@@ -75,5 +76,5 @@ function makeAddress(address) {
 
 function backToPlaces(event) {
 	event.target.removeEventListener('click', backToPlaces);
-	startRenderPlaces();
+	startRenderPlaces(selectors.placesByPages(store.activePages));
 }

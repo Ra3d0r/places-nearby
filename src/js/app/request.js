@@ -5,8 +5,10 @@ async function handleRequest(city) {
 
 	const places = await getPlaces(geo);
 	store.entities.places = places;
-	const infoPlaces = await handleInfoPlaces(places, 0, 8);
-	store.entities.render = infoPlaces;
+	const [start, end] = store.pagination[1];
+	const infoPlaces = await handleInfoPlaces(places, start, end);
+	store.entities.render[1] = infoPlaces;
+	store.entities.render.all = [].concat(infoPlaces);
 }
 
 async function getGeo(city) {
