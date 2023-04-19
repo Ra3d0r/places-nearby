@@ -64,7 +64,7 @@ function setInDom(parentElement, element) {
 	}
 
 	if (element === null || element === undefined) {
-		throw new Error('Созданный элемент является пустым');
+		return console.log('Передан пустой элемент в setInDom');
 	}
 	parentElement.append(element);
 }

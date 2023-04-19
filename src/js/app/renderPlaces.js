@@ -1,7 +1,9 @@
-function startRenderPlaces(places) {
+function startRenderPlaces(places, pagination = true) {
 	preparationRenderPlaces();
 	renderPlaces(places);
-	setInDom(store.root, createPagination());
+	if (pagination) {
+		setInDom(store.root, createPagination());
+	}
 }
 
 function preparationRenderPlaces() {
@@ -17,7 +19,10 @@ function renderPlaces(places) {
 	container.classList.add('section-places__grid-container');
 
 	places.forEach((place) => {
-		container.append(createPlace(place));
+		const placeElement = createPlace(place);
+		if (placeElement) {
+			container.append(placeElement);
+		}
 	});
 
 	setInDom(store.root, container);

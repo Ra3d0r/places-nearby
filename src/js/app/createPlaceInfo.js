@@ -76,5 +76,5 @@ function makeAddress(address) {
 
 function backToPlaces(event) {
 	event.target.removeEventListener('click', backToPlaces);
-	startRenderPlaces(selectors.placesByPages(store.activePages));
+	updateRenderPlaces();
 }

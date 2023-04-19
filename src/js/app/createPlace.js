@@ -1,4 +1,8 @@
-function createPlace({ name, kinds, rate, xid, info }) {
+function createPlace(props) {
+	if (!props) {
+		return null;
+	}
+	const { name, kinds, rate, xid, info } = props;
 	const source = info.preview?.source || '/img/place.png';
 
 	const place = document.createElement('div');

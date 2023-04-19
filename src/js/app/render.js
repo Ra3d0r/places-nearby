@@ -1,8 +1,15 @@
 function initRender(value) {
 	handleRequest(value).then(() => {
 		preparationRenderPlaces();
-		renderPlaces(selectors.placesByPages(1));
-		setInDom(store.root, createPagination());
+		const places = selectors.placesByPages(1);
+		if (!places?.length) {
+			setInDom(store.root, createNotDefined());
+		} else if (places.length >= 8) {
+			renderPlaces(places);
+			setInDom(store.root, createPagination());
+		} else {
+			renderPlaces(places);
+		}
 	});
 	renderLoading();
 	resetToDefaultStore();
@@ -29,5 +36,9 @@ function resetToDefaultStore() {
 }
 
 function updateRenderPlaces() {
-	startRenderPlaces(selectors.placesByPages(store.activePages));
+	if (store.entities.render.all >= 8) {
+		startRenderPlaces(selectors.placesByPages(store.activePages));
+	} else {
+		startRenderPlaces(selectors.placesByPages(store.activePages), false);
+	}
 }
