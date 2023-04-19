@@ -1,11 +1,12 @@
 -const textSelectCategories = 'Select category'
--const categories = ['Interesting places', 'Cultural']
--const dataCategories = ['interesting_places', 'cultural']
+-const categories = ['Interesting places', 'Cultural', 'Tourism', 'Architecture', 'Natural']
+-const dataCategories = ['interesting_places', 'cultural', 'tourist_facilities', 'architecture', 'natural']
 
--const textFilters = ['text', 'text2']
--const idFilters = ['filter1', 'filter2']
+-const textFilters = ['Historic', 'Religion']
+-const idFilters = ['historic', 'religion']
 
--const textSort = ['textSrt1', 'textSrt2']
+-const textSort = ['Name', 'Rating']
+-const idSort = ['name', 'rating']
 
 .search-section
 	.container
@@ -16,4 +17,4 @@
 			+search
 		.search-section__control-panel
 			+filter(textFilters, idFilters)
-			+sort(textSort)
+			+sort(textSort, idSort)

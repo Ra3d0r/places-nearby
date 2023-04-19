@@ -3,7 +3,7 @@ mixin filter(texts = [], id = [])
 		.filter__title
 			+columns
 			span.filter__text Filter By
-		.filter__checkbox
+		.filter__checkbox#filter
 			each text, i in texts
-				input(id=`${id[i]}` name=`${text}` type='checkbox')
+				input(id=`${id[i]}` name=`${text}` type='checkbox' value=id[i])
 				label(for=`${id[i]}`)= text

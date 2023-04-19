@@ -1,10 +1,10 @@
-mixin sort(orders = [])
+mixin sort(orders = [], id = [])
 	.sort
 		.sort__title
 			+sort-ico
 			span.sort__text Sort By
-		.sort__list
-			each order in orders
+		.sort__list#sort
+			each order, i in orders
 				.sort__container
-					input.sort__input(id=order, name='filter', type="radio", value=order)
-					label.sort__label(for=order)= order
+					input.sort__input(id=id[i], name='filter', type="radio", value=id[i])
+					label.sort__label(for=id[i])= order

@@ -27,3 +27,7 @@ function resetToDefaultStore() {
 		all: [],
 	};
 }
+
+function updateRenderPlaces() {
+	startRenderPlaces(selectors.placesByPages(store.activePages));
+}

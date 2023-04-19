@@ -53,12 +53,12 @@ function createNameCategory(categories) {
 
 function nameCategory(category) {
 	switch (category) {
-		case 'religion':
-			return 'Religion';
 		case 'monuments_and_memorials':
-			return 'Memorials';
+			return 'memorials';
 		case 'gardens_and_parks':
-			return 'Parks';
+			return 'parks';
+		case 'theatres_and_entertainments':
+			return 'theatres';
 		default:
 			return category;
 	}
