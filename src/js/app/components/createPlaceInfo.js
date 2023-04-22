@@ -73,8 +73,3 @@ function makeAddress(address) {
 		.slice(0, -2);
 	return stringAddress;
 }
-
-function backToPlaces(event) {
-	event.target.removeEventListener('click', backToPlaces);
-	updateRenderPlaces();
-}

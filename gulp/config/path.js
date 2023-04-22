@@ -14,7 +14,8 @@ export const path = {
 		fonts: `${folderBuild}/fonts/`,
 	},
 	src: {
-		js: `${folderScr}/js/index.js`,
+		js: `${folderScr}/js/index/**/*.js`,
+		appJs: `${folderScr}/js/**/*.js`,
 		scss: `${folderScr}/scss/style.scss`,
 		html: `${folderScr}/*.pug`,
 		images: `${folderScr}/img/**/*.{jpg,jpeg,png,gif,webp,ico}`,

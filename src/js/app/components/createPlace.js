@@ -48,6 +48,15 @@ function createPlace(props) {
 	return place;
 }
 
+function createPlaceButton(className, xid) {
+	const button = document.createElement('button');
+	button.classList.add(className);
+	button.textContent = 'get more';
+	button.dataset.xid = xid;
+	button.addEventListener('click', handlePlaceButton);
+	return button;
+}
+
 function createNameCategory(categories) {
 	return categories
 		.split(',')
@@ -66,24 +75,4 @@ function nameCategory(category) {
 		default:
 			return category;
 	}
-}
-
-function createPlaceButton(className, xid) {
-	const button = document.createElement('button');
-	button.classList.add(className);
-	button.textContent = 'get more';
-	button.dataset.xid = xid;
-	button.addEventListener('click', handlePlaceButton);
-	return button;
-}
-
-function handlePlaceButton(event) {
-	detachEventPlaces();
-	startRenderPlaceInfo(event.target.dataset.xid);
-}
-
-function detachEventPlaces() {
-	store.root.querySelectorAll('.place__button').forEach((button) => {
-		button.removeEventListener('click', handlePlaceButton);
-	});
 }

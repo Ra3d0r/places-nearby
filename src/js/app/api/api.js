@@ -6,8 +6,8 @@ class Api {
 		const endPoint =
 			this.URL +
 			`ru/places/geoname?name=${city}&format=geojson&apikey=${this.#api}`;
-
-		return client.get(endPoint);
+		const { lat, lon } = await client.get(endPoint);
+		return { lat, lon };
 	}
 
 	async getPlacesByData({ lat, lon, category }) {

@@ -5,10 +5,7 @@ import concat from 'gulp-concat';
 
 export function js() {
 	return app.gulp
-		.src([
-			`${app.path.folderScr}/js/index/index.js`,
-			`${app.path.folderScr}/js/index/*.js`,
-		])
+		.src(app.path.src.js)
 		.pipe(
 			app.plugins.plumber(
 				app.plugins.notify.onError({
@@ -35,11 +32,7 @@ export function js() {
 
 export function appJs() {
 	return app.gulp
-		.src([
-			`${app.path.folderScr}/js/app/*.js`,
-			`${app.path.folderScr}/js/app.js`,
-			`${app.path.folderScr}/js/index/*.js`,
-		])
+		.src(app.path.src.appJs)
 		.pipe(
 			app.plugins.plumber(
 				app.plugins.notify.onError({

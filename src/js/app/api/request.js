@@ -1,9 +1,11 @@
 async function handleRequest(city) {
-	const geo = await getGeo(city);
+	const api = new Api();
+	const geo = await api.getGeoCity(city);
+
 	const category = document.querySelector('.sBtn-text').dataset.category;
 	geo.category = category;
 
-	const places = await getPlaces(geo);
+	const places = await api.getPlacesByData(geo);
 	if (!places.length) {
 		return console.log('Places is not defined');
 	}
@@ -13,25 +15,10 @@ async function handleRequest(city) {
 	const infoPlaces = await handleInfoPlaces(places, start, end);
 
 	store.entities.render[1] = infoPlaces;
-	store.entities.render.all = [].concat(infoPlaces);
-}
-
-async function getGeo(city) {
-	const api = new Api();
-	const { lat, lon } = await api.getGeoCity(city);
-	return { lat, lon };
-}
-
-async function getPlaces(geo) {
-	const api = new Api();
-	const data = await api.getPlacesByData(geo);
-	return data;
+	store.entities.render.all = [...infoPlaces];
 }
 
 async function handleInfoPlaces(places = [], start, qty) {
-	if (!places.length) {
-		return console.log('Request with an empty array');
-	}
 	qty = places.length < 8 ? places.length : qty;
 
 	const newPlaces = [];
@@ -46,18 +33,13 @@ async function handleInfoPlaces(places = [], start, qty) {
 }
 
 async function* generatorInfoPlaces(places) {
+	const api = new Api();
 	for (let place of places) {
 		await new Promise((resolve) => setTimeout(resolve, 100));
-		const infoPlace = await getInfoPlace(place.xid);
+		const infoPlace = await api.getPlaceByXid(place.xid);
 		yield {
 			...place,
 			info: infoPlace,
 		};
 	}
-}
-
-async function getInfoPlace(xid) {
-	const api = new Api();
-	const data = await api.getPlaceByXid(xid);
-	return data;
 }
