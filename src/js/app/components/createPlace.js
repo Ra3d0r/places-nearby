@@ -53,7 +53,7 @@ function createPlaceButton(className, xid) {
 	button.classList.add(className);
 	button.textContent = 'get more';
 	button.dataset.xid = xid;
-	button.addEventListener('click', handlePlaceButton);
+	button.addEventListener('click', handlePlaceButton, { once: true });
 	return button;
 }
 

@@ -38,7 +38,7 @@ function createPlaceInfoButton() {
 	const button = document.createElement('button');
 	button.classList.add('main-button', 'main-button_mini');
 	button.innerHTML = `<span class="main-button__text">BACK</span>`;
-	button.addEventListener('click', backToPlaces);
+	button.addEventListener('click', backToPlaces, { once: true });
 	return button;
 }
 
