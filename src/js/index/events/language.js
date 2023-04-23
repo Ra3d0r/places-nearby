@@ -1,20 +1,3 @@
-function closeMenuSelectLanguage(event) {
-	const clickOutMenu = !event.target.classList.value.includes('language');
-	if (clickOutMenu) {
-		deleteMenuSelectLanguage();
-	}
-}
-
-function deleteMenuSelectLanguage() {
-	const menuLanguage = document.querySelector('.menu-language');
-	detachMenuLanguageEvents();
-	menuLanguage.remove();
-}
-
-function detachMenuLanguageEvents() {
-	document.removeEventListener('click', closeMenuSelectLanguage);
-}
-
 function createMenuSelectLanguage(mobileOrDesktop) {
 	const div = document.createElement('div');
 	div.innerHTML = `<div class="menu-language__arrow"></div> 
@@ -35,23 +18,27 @@ function checkMobileClickSelectLanguage(boxControl) {
 }
 
 function openSelectLanguage(event) {
-	const boxControl =
-		event.target.parentElement.parentElement.classList.value.includes(
-			'select-languages'
-		)
-			? event.target.parentElement.parentElement.parentElement
-			: event.target.parentElement.parentElement;
+	const boxControl = event.target.closest('.box-control');
 
 	const mobileOrDesktop = checkMobileClickSelectLanguage(boxControl);
 	const menuLanguage = document.querySelector('.menu-language');
 
 	if (!boxControl.contains(menuLanguage)) {
 		const menuSelectLanguage = createMenuSelectLanguage(mobileOrDesktop);
-		attachMenuLanguageEvents();
+		document.body.addEventListener('click', closeMenuSelectLanguage);
 		setInDom(boxControl, menuSelectLanguage);
 	}
 }
 
-function attachMenuLanguageEvents() {
-	document.addEventListener('click', closeMenuSelectLanguage);
+function closeMenuSelectLanguage(event) {
+	const clickOutMenu = !event.target.classList.value.includes('language');
+	if (clickOutMenu) {
+		deleteMenuSelectLanguage();
+	}
+}
+
+function deleteMenuSelectLanguage() {
+	const menuLanguage = document.querySelector('.menu-language');
+	document.body.removeEventListener('click', closeMenuSelectLanguage);
+	menuLanguage.remove();
 }

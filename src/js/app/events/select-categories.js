@@ -1,6 +1,12 @@
 function toggleSelectCategories(event) {
 	const optionMenu = event.currentTarget;
-	optionMenu.classList.toggle('active');
+	if (optionMenu.classList.value.includes('active')) {
+		optionMenu.classList.remove('active');
+		removeCloseSelectCategories();
+	} else {
+		optionMenu.classList.add('active');
+		document.body.addEventListener('click', closeSelectCategories);
+	}
 }
 
 function handleSelectCategories() {
@@ -12,4 +18,17 @@ function handleSelectCategories() {
 
 	sBtnText.innerText = selectedOption;
 	sBtnText.dataset.category = dataCategory;
+}
+
+function closeSelectCategories(event) {
+	const isSelectCategories = !!event.target.closest('.select-categories');
+	if (!isSelectCategories) {
+		const selectCategories = document.querySelector('.select-categories');
+		selectCategories.classList.remove('active');
+		removeCloseSelectCategories();
+	}
+}
+
+function removeCloseSelectCategories() {
+	document.body.removeEventListener('click', closeSelectCategories);
 }
