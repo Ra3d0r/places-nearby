@@ -8,7 +8,7 @@ footer {
 	align-items: center;
 	height: 236px;
 	flex-wrap: wrap;
-	@include total-padding;
+	//@include total-padding;
 
 	@media (max-width: 747px) {
 		justify-content: center;

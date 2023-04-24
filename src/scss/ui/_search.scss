@@ -1,7 +1,7 @@
 .search {
 	display: flex;
 	width: 480px;
-	@include total-padding;
+	//@include total-padding;
 
 	&__input {
 		width: 100%;

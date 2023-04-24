@@ -10,7 +10,7 @@
 	align-items: center;
 	margin-bottom: 160px;
 	width: 95%;
-	@include total-padding;
+	//@include total-padding;
 
 	&__name-company {
 		color: var(--color-orange);

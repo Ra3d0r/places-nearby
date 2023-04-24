@@ -1,7 +1,7 @@
 .main-index {
 	margin-bottom: 246px;
 	position: relative;
-	@include total-padding;
+	//@include total-padding;
 
 	@media (max-width: 567px) {
 		margin-bottom: calc(100% - 400px);

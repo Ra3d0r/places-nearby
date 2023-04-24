@@ -4,6 +4,7 @@
 	width: 100%;
 	margin: 0 auto;
 	overflow: hidden;
+	@include total-padding;
 }
 
 // Глобальный контейнер для страницы с приложением у хедера
