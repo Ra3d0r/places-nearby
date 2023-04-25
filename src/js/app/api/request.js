@@ -1,5 +1,5 @@
 async function handleRequest(city) {
-	const api = new Api();
+	const api = new Api(store.lang);
 	const geo = await api.getGeoCity(city);
 
 	const category = document.querySelector('.sBtn-text').dataset.category;
@@ -33,7 +33,7 @@ async function handleInfoPlaces(places = [], start, qty) {
 }
 
 async function* generatorInfoPlaces(places) {
-	const api = new Api();
+	const api = new Api(store.lang);
 	for (let place of places) {
 		await new Promise((resolve) => setTimeout(resolve, 100));
 		const infoPlace = await api.getPlaceByXid(place.xid);

@@ -10,5 +10,5 @@ mixin menu
 				+nav-links('-menu')
 				.menu__select-languages.select-languages#select-languages-mobile
 					+globe
-					p.select-languages__languages English
+					p.select-languages__languages= isEng ? 'English' : 'Russian'
 					+arrow-down

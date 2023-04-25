@@ -1,22 +1,3 @@
-function createMenuSelectLanguage(mobileOrDesktop) {
-	const div = document.createElement('div');
-	div.innerHTML = `<div class="menu-language__arrow"></div> 
-        <ul class="menu-language__list">
-            <li class="menu-language__item"><a class="menu-language__link" id="Russian">Russian</a></li>
-            <li class="menu-language__item"><a class="menu-language__link" id="English">English</a></li>
-        </ul>`;
-	div.classList.add(`menu-language`, mobileOrDesktop);
-	return div;
-}
-
-function checkMobileClickSelectLanguage(boxControl) {
-	if (boxControl.classList.value.includes('header')) {
-		return 'desktop';
-	} else {
-		return 'mobile';
-	}
-}
-
 function openSelectLanguage(event) {
 	const boxControl = event.target.closest('.box-control');
 
@@ -40,5 +21,12 @@ function closeMenuSelectLanguage(event) {
 function deleteMenuSelectLanguage() {
 	const menuLanguage = document.querySelector('.menu-language');
 	document.body.removeEventListener('click', closeMenuSelectLanguage);
+	menuLanguage
+		.querySelectorAll('a')
+		.forEach((a) => a.removeEventListener('click', handleSelectLanguages));
 	menuLanguage.remove();
+}
+
+function checkMobileClickSelectLanguage(boxControl) {
+	return boxControl.classList.value.includes('header') ? 'desktop' : 'mobile';
 }

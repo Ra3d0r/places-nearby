@@ -23,7 +23,9 @@ function createPlaceInfo({ name, wikipedia_extracts, preview, address, info }) {
 					<div class="place-item__description">${description}</div>
 				</div>
 				<div class="place-item__map-container">
-					<h3 class="place-item__subtitle">Location on the map</h3>
+					<h3 class="place-item__subtitle">
+						${store.lang === 'en' ? 'Location on the map' : 'Месторасположение на карте'}
+					</h3>
 					<div id="map"></div>
 					<h2 class="place-item__address">${strAddress}</h2>
 				</div>
@@ -37,7 +39,9 @@ function createPlaceInfo({ name, wikipedia_extracts, preview, address, info }) {
 function createPlaceInfoButton() {
 	const button = document.createElement('button');
 	button.classList.add('main-button', 'main-button_mini');
-	button.innerHTML = `<span class="main-button__text">BACK</span>`;
+	button.innerHTML = `<span class="main-button__text">${
+		store.lang === 'en' ? 'BACK' : 'НАЗАД'
+	}</span>`;
 	button.addEventListener('click', backToPlaces, { once: true });
 	return button;
 }

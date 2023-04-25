@@ -1,8 +1,6 @@
 import webpHtmlNoSvg from 'gulp-webp-html-nosvg';
 import versionNumber from 'gulp-version-number';
 import GulpPug from 'gulp-pug';
-import fs from 'fs';
-const dataFromFile = JSON.parse(fs.readFileSync(`src/data/nav.json`, 'utf-8'));
 
 export function html() {
 	return app.gulp
@@ -17,7 +15,6 @@ export function html() {
 		)
 		.pipe(
 			GulpPug({
-				locals: dataFromFile || {},
 				// сжатие html файла
 				pretty: true,
 				// показывать какой файл отработан

@@ -15,6 +15,7 @@ const store = {
 		name: false,
 		rating: false,
 	},
+	lang: document.querySelector('#language').dataset.lang,
 };
 
 function resetToDefaultStore() {

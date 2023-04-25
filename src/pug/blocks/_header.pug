@@ -8,7 +8,7 @@ div(class=`container${isApp ? ' app' : ''}`)
 				+nav-links
 				.header__select-languages.select-languages#select-languages
 					+globe
-					p.select-languages__languages(data-lang=`${isEng ? 'eng' : 'ru'}`)= isEng ? 'English' : 'Russian'
+					p#language.select-languages__languages(data-lang=`${isEng ? 'en' : 'ru'}`)= isEng ? 'English' : 'Russian'
 					+arrow-down
 				.toggle-switch.header__toggle
 					label.toggle-switch__label
