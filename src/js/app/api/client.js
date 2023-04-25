@@ -1,15 +1,7 @@
 async function client(endPoint, { body, ...customConfig }) {
-	const headers = {
-		'Content-Type': 'applications/json',
-	};
-
 	const config = {
 		method: body ? 'POST' : 'GET',
 		...customConfig,
-		headers: {
-			...headers,
-			...customConfig.headers,
-		},
 	};
 
 	if (body) {

@@ -29,18 +29,9 @@ class Api {
 	}
 
 	async getPlaceByXid(xid) {
-		try {
-			const endPoint =
-				this.URL + `${this.lang}/places/xid/${xid}?apikey=${this.#api}`;
+		const endPoint =
+			this.URL + `${this.lang}/places/xid/${xid}?apikey=${this.#api}`;
 
-			const res = await fetch(endPoint);
-
-			if (!res.ok) {
-				return null;
-			}
-			return await res.json();
-		} catch (err) {
-			console.error(err);
-		}
+		return client.get(endPoint);
 	}
 }
