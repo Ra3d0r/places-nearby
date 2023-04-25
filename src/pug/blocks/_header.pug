@@ -1,14 +1,14 @@
 +menu 
 div(class=`container${isApp ? ' app' : ''}`) 
 	header(class=`header${isApp ? ' margin-app' : ''}` id="home")
-		a.header__name-company(href='/') FindPlace
+		a.header__name-company(href=`${isEng ? '/' : '/index-ru.html'}`) FindPlace
 		nav.nav.header__nav
 			+burger-menu
 			.header__box-control.box-control
 				+nav-links
 				.header__select-languages.select-languages#select-languages
 					+globe
-					p.select-languages__languages English
+					p.select-languages__languages(data-lang=`${isEng ? 'eng' : 'ru'}`)= isEng ? 'English' : 'Russian'
 					+arrow-down
 				.toggle-switch.header__toggle
 					label.toggle-switch__label

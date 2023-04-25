@@ -4,5 +4,5 @@ mixin category(title, subtitle, svg, textArrow= 'Checkout')
 							+#{svg} 
 						h3.categories__title= title 
 						p.categories__subtitle= subtitle 
-						a.categories__action.action= textArrow
+						a.categories__action.action(href=linkApp)= textArrow
 							+arrow-right

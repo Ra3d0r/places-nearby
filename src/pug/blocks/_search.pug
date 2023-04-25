@@ -1,20 +1,10 @@
--const textSelectCategories = 'Select category'
--const categories = ['Interesting places', 'Cultural', 'Tourism', 'Architecture', 'Natural']
--const dataCategories = ['interesting_places', 'cultural', 'tourist_facilities', 'architecture', 'natural']
-
--const textFilters = ['Historic', 'Religion']
--const idFilters = ['historic', 'religion']
-
--const textSort = ['Name', 'Rating']
--const idSort = ['name', 'rating']
-
 .search-section
 	.container
 		.search-section__container-title
-			h1.search-section__title.title-categories Just write the name of the street
-			+select-categories(categories, dataCategories, textSelectCategories)
+			h1.search-section__title.title-categories=searchTitle
+			+select-categories(searchCategories, searchDataCategories, searchTextSelectCategories)
 		.search-section__search
 			+search
 		.search-section__control-panel
-			+filter(textFilters, idFilters)
-			+sort(textSort, idSort)
+			+filter(searchTextFilters, searchIdFilters)
+			+sort(searchTextSort, searchIdSort)

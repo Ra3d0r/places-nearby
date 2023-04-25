@@ -1,5 +1,5 @@
 mixin nav-links(prefix = '')
 	ul(class=`nav__list${prefix}`)
-		each item,i in links
+		each item,i in linkNames
 			li.nav__item
-				a.nav__link(href=`${arr[i]}`) #{item}
+				a.nav__link(href=`${navLinks[i]}`) #{item}

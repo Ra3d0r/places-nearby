@@ -3,7 +3,7 @@ mixin description(title, subtitle, imgBig, imgMini, orderText = 'order1-1', orde
 		.description__container-text(class=orderText)
 			.description__title= title
 			.description__subtitle= subtitle
-			a.description__action.action= actionText
+			a.description__action.action(href=linkApp)= actionText
 					+arrow-right
 		.description__container-images(class=orderImages)
 			.description__container-position

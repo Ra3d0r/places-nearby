@@ -2,8 +2,8 @@
 	.container
 		#root
 			.section-places__grid-container
-				//+place
-			//.pagination 
+				//- +place
+			//- .pagination 
 				- for(let i = 1; i <= 8; i++)
 					input(id='toggle-' + i, name="toggle", type="radio")
 					label(class='label-' + i, for='toggle-' + i)= i
