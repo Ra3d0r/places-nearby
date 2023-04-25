@@ -1,8 +1,13 @@
 function initRender(value) {
-	handleRequest(value).then(() => {
-		preparationRenderPlaces();
-		conditionalRender(selectors.placesByPages(1));
-	});
+	handleRequest(value)
+		.then(() => {
+			preparationRenderPlaces();
+			conditionalRender(selectors.placesByPages(1));
+		})
+		.catch(() => {
+			clearAllChields(store.root);
+			setInDom(store.root, createNotDefined());
+		});
 	renderLoading();
 	resetToDefaultStore();
 }
