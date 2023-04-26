@@ -2,8 +2,8 @@ const selectors = {
 	places: () => store.entities.render.all,
 	placeByXid: (xid) =>
 		store.entities.render.all.find((place) => place.xid === xid),
-	placesByPages(pages) {
-		const places = store.entities.render[pages] || [];
+	placesByPage(page) {
+		const places = store.entities.render[page] || [];
 		return this._handlePlaces(places);
 	},
 

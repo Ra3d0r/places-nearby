@@ -1,6 +1,7 @@
-async function getCurrentPages(pages) {
-	if (store.entities.render[pages]) {
-		return startRenderPlaces(selectors.placesByPages(pages));
+async function getCurrentPage(page) {
+	route.state = { ...route.state, page };
+	if (store.entities.render[page]) {
+		return startRenderPlaces(selectors.placesByPage(page));
 	}
 
 	if (store.status === 'loading') {
@@ -8,13 +9,13 @@ async function getCurrentPages(pages) {
 	}
 
 	renderLoading();
-	const [start, end] = store.pagination[pages];
+	const [start, end] = store.pagination[page];
 	const infoPlaces = await handleInfoPlaces(
 		store.entities.places,
 		start,
 		end
 	);
-	store.entities.render[pages] = infoPlaces;
+	store.entities.render[page] = infoPlaces;
 	store.entities.render.all = store.entities.render.all.concat(infoPlaces);
-	startRenderPlaces(selectors.placesByPages(pages));
+	startRenderPlaces(selectors.placesByPage(page));
 }

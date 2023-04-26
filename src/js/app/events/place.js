@@ -1,3 +1,5 @@
 function handlePlaceButton(event) {
-	startRenderPlaceInfo(event.target.dataset.xid);
+	const xid = event.target.dataset.xid;
+	startRenderPlaceInfo(xid);
+	route.state = { ...route.state, xid };
 }

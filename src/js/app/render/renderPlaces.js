@@ -11,6 +11,14 @@ function preparationRenderPlaces() {
 	document.querySelector('.search-section').classList.remove('hidden');
 }
 
+function updateRenderPlaces() {
+	if (store.entities.places.length > 8) {
+		startRenderPlaces(selectors.placesByPage(store.activePage));
+	} else {
+		startRenderPlaces(selectors.placesByPage(store.activePage), false);
+	}
+}
+
 function renderPlaces(places) {
 	if (!Array.isArray(places)) {
 		throw new Error('В функцию рендера нескольких мест передан не массив');

@@ -5,7 +5,7 @@ function handleSearchClick(input) {
 	if (!input.value) {
 		return;
 	}
-	initRender(input.value);
+	initRender(input.value, 1);
 	input.value = '';
 }
 
@@ -18,7 +18,7 @@ function handleSearchKeyUp(event) {
 			return console.log('Content loading is already going on');
 		}
 		const value = event.target.value;
-		initRender(value);
+		initRender(value, 1);
 		event.target.value = '';
 	}
 }

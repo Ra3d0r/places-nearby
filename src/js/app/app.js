@@ -1,3 +1,8 @@
+document.addEventListener(
+	'DOMContentLoaded',
+	conditionalRenderRouteAfterRequest
+);
+
 (function initApp() {
 	const optionMenu = document.querySelector('.select-categories');
 	const options = optionMenu.querySelectorAll('.option');
