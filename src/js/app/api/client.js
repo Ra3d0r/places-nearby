@@ -25,15 +25,3 @@ async function client(endPoint, { body, ...customConfig }) {
 client.get = function (endPoint, customConfig = {}) {
 	return client(endPoint, customConfig);
 };
-
-client.post = function (endPoint, body, customConfig = {}) {
-	return client(endPoint, { ...customConfig, body });
-};
-
-client.delete = function (endPoint, customConfig = {}) {
-	return client(endPoint, { ...customConfig, method: 'DELETE' });
-};
-
-client.patch = function (endPoint, body, customConfig = {}) {
-	return client(endPoint, { ...customConfig, body, method: 'PATCH' });
-};
