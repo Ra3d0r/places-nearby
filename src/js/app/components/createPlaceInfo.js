@@ -1,4 +1,11 @@
-function createPlaceInfo({ name, wikipedia_extracts, preview, address, info }) {
+function createPlaceInfo({
+	name,
+	wikipedia_extracts,
+	preview,
+	address,
+	info,
+	xid,
+}) {
 	const description =
 		wikipedia_extracts?.html || info?.descr || 'Description none';
 	const source = preview?.source || '/img/place.png';
@@ -33,6 +40,7 @@ function createPlaceInfo({ name, wikipedia_extracts, preview, address, info }) {
 		</div> `;
 	const button = createPlaceInfoButton();
 	section.querySelector('.placeItem-section__button').append(button);
+	section.dataset.xid = xid;
 	return section;
 }
 

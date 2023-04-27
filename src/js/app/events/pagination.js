@@ -18,4 +18,5 @@ async function getCurrentPage(page) {
 	store.entities.render[page] = infoPlaces;
 	store.entities.render.all = store.entities.render.all.concat(infoPlaces);
 	startRenderPlaces(selectors.placesByPage(page));
+	store.root.scrollIntoView();
 }

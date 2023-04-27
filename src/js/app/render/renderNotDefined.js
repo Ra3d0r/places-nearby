@@ -4,4 +4,5 @@ function renderNotDefined() {
 	if (route.state) {
 		route.state = null;
 	}
+	store.status = 'idle';
 }

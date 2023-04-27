@@ -1,4 +1,4 @@
-function conditionalRenderRoute(state) {
+function conditionalRenderRoute(state, previousXid) {
 	const page = state?.page;
 	if (page === undefined) {
 		return clearAllChields(store.root);
@@ -9,20 +9,22 @@ function conditionalRenderRoute(state) {
 		return startRenderPlaceInfo(state.xid);
 	}
 	updateRenderPlaces();
+	scrollIntoPlaceByXid(previousXid);
 }
 
-function conditionalRenderRouteAfterRequest() {
+function conditionalRenderRouteAfterRequest(previousXid) {
 	if (!location.search) {
 		return clearAllChields(store.root);
 	}
+	renderLoading();
+	resetToDefaultStore();
 	requestParams()
 		.then(() => {
 			if (route.state.xid) {
 				return startRenderPlaceInfo(route.state.xid);
 			}
-			return updateRenderPlaces();
+			updateRenderPlaces();
+			scrollIntoPlaceByXid(previousXid);
 		})
 		.catch(renderNotDefined);
-	renderLoading();
-	resetToDefaultStore();
 }

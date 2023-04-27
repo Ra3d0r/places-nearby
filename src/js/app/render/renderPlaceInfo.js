@@ -13,4 +13,5 @@ function preparationRenderPlaceInfo() {
 function renderPlaceInfo(place) {
 	const placeInfo = createPlaceInfo(place);
 	setInDom(store.root, placeInfo);
+	document.querySelector('.placeItem-section').scrollIntoView();
 }

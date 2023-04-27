@@ -1,17 +1,31 @@
 class Routes {
 	currentState = null;
+	currentURL = '';
 
 	set state(state) {
 		this.currentState = state;
-		history.pushState(state, '', this._makeURLParams(state));
+		const search = this._makeURLParams(state);
+		history.pushState(state, '', search);
+		this.url = search;
 	}
 
 	get state() {
 		return this.currentState;
 	}
 
-	replace(state) {
+	set url(URL) {
+		this.currentURL = location.origin + location.pathname + URL;
+	}
+
+	get url() {
+		return this.currentURL;
+	}
+
+	replace(state, url) {
 		this.currentState = state;
+		if (url) {
+			this.currentURL = url;
+		}
 	}
 
 	_makeURLParams(state) {
@@ -31,3 +45,4 @@ class Routes {
 }
 
 const route = new Routes();
+history.scrollRestoration = 'manual';

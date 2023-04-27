@@ -10,12 +10,3 @@ function getParams() {
 
 	return result;
 }
-
-function validParams(objParams = {}) {
-	return Object.keys(objParams).reduce((acc, key) => {
-		if (objParams[key]) {
-			acc[key] = objParams[key];
-		}
-		return acc;
-	}, {});
-}
