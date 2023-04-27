@@ -1,6 +1,6 @@
 class Api {
 	#api = '5ae2e3f221c38a28845f05b695f92c0afb884b763036c7ed3be0b040';
-	URL = 'http://api.opentripmap.com/0.1/';
+	URL = 'https://api.opentripmap.com/0.1/';
 
 	constructor(lang = 'en') {
 		this.lang = lang;
