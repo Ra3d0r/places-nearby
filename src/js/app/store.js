@@ -2,7 +2,6 @@ const store = {
 	entities: {
 		places: [],
 		render: {
-			1: [],
 			all: [],
 		},
 	},

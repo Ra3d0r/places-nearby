@@ -1,7 +1,6 @@
 function resetToDefaultStore() {
 	store.activePage = 1;
 	store.entities.render = {
-		1: [],
 		all: [],
 	};
 	store.entities.places = [];
