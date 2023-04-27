@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FindPlace</title>
+    <link href="css/style.min.css?_v=20230427155107" rel="stylesheet"/>
+    <script src="js/app.min.js?_v=20230427155107" defer="defer"> </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="menu" id="menu">
+        <svg class="menu__cross" id="close-menu" width="64" height="64" viewbox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22.6066 21.3934C22.2161 21.0029 21.5829 21.0029 21.1924 21.3934C20.8019 21.7839 20.8019 22.4171 21.1924 22.8076L22.6066 21.3934ZM40.9914 42.6066C41.3819 42.9971 42.0151 42.9971 42.4056 42.6066C42.7961 42.2161 42.7961 41.5829 42.4056 41.1924L40.9914 42.6066ZM21.1924 41.1924C20.8019 41.5829 20.8019 42.2161 21.1924 42.6066C21.5829 42.9971 22.2161 42.9971 22.6066 42.6066L21.1924 41.1924ZM42.4056 22.8076C42.7961 22.4171 42.7961 21.7839 42.4056 21.3934C42.0151 21.0029 41.3819 21.0029 40.9914 21.3934L42.4056 22.8076ZM21.1924 22.8076L40.9914 42.6066L42.4056 41.1924L22.6066 21.3934L21.1924 22.8076ZM22.6066 42.6066L42.4056 22.8076L40.9914 21.3934L21.1924 41.1924L22.6066 42.6066Z" fill="black"></path>
+        </svg>
+        <div class="toggle-switch menu__toggle">
+          <label class="toggle-switch__label">
+            <input class="toggle-switch__checkbox" type="checkbox" id="mode-mobile"/><span class="toggle-switch__slider"></span>
+          </label>
+        </div>
+        <div class="menu__flex-container">
+          <div class="menu__box-control box-control">
+            <ul class="nav__list-menu">
+              <li class="nav__item"><a class="nav__link" href="/index-ru.html">Главная</a></li>
+              <li class="nav__item"><a class="nav__link" href="/index-ru.html#categories">Категории</a></li>
+              <li class="nav__item"><a class="nav__link" href="/index-ru.html#about">О нас</a></li>
+            </ul>
+            <div class="menu__select-languages select-languages" id="select-languages-mobile">
+              <svg class="select-languages__earth" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.49996 1.80002C4.35194 1.80002 1.79996 4.352 1.79996 7.50002C1.79996 10.648 4.35194 13.2 7.49996 13.2C10.648 13.2 13.2 10.648 13.2 7.50002C13.2 4.352 10.648 1.80002 7.49996 1.80002ZM0.899963 7.50002C0.899963 3.85494 3.85488 0.900024 7.49996 0.900024C11.145 0.900024 14.1 3.85494 14.1 7.50002C14.1 11.1451 11.145 14.1 7.49996 14.1C3.85488 14.1 0.899963 11.1451 0.899963 7.50002Z" fill="currentColor"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.4999 7.89998H1.49994V7.09998H13.4999V7.89998Z" fill="currentColor"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.09991 13.5V1.5H7.89991V13.5H7.09991zM10.375 7.49998C10.375 5.32724 9.59364 3.17778 8.06183 1.75656L8.53793 1.24341C10.2396 2.82218 11.075 5.17273 11.075 7.49998 11.075 9.82724 10.2396 12.1778 8.53793 13.7566L8.06183 13.2434C9.59364 11.8222 10.375 9.67273 10.375 7.49998zM3.99969 7.5C3.99969 5.17611 4.80786 2.82678 6.45768 1.24719L6.94177 1.75281C5.4582 3.17323 4.69969 5.32389 4.69969 7.5 4.6997 9.67611 5.45822 11.8268 6.94179 13.2472L6.45769 13.7528C4.80788 12.1732 3.9997 9.8239 3.99969 7.5z" fill="currentColor"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.49996 3.95801C9.66928 3.95801 11.8753 4.35915 13.3706 5.19448 13.5394 5.28875 13.5998 5.50197 13.5055 5.67073 13.4113 5.83948 13.198 5.89987 13.0293 5.8056 11.6794 5.05155 9.60799 4.65801 7.49996 4.65801 5.39192 4.65801 3.32052 5.05155 1.97064 5.8056 1.80188 5.89987 1.58866 5.83948 1.49439 5.67073 1.40013 5.50197 1.46051 5.28875 1.62927 5.19448 3.12466 4.35915 5.33063 3.95801 7.49996 3.95801zM7.49996 10.85C9.66928 10.85 11.8753 10.4488 13.3706 9.6135 13.5394 9.51924 13.5998 9.30601 13.5055 9.13726 13.4113 8.9685 13.198 8.90812 13.0293 9.00238 11.6794 9.75643 9.60799 10.15 7.49996 10.15 5.39192 10.15 3.32052 9.75643 1.97064 9.00239 1.80188 8.90812 1.58866 8.9685 1.49439 9.13726 1.40013 9.30601 1.46051 9.51924 1.62927 9.6135 3.12466 10.4488 5.33063 10.85 7.49996 10.85z" fill="currentColor"></path>
+              </svg>
+              <p class="select-languages__languages">Russian</p>
+              <svg class="select-languages__arrow" fill="#000000" height="800px" width="800px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 330 330" xml:space="preserve">
+                <path id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393		c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393		s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container app"> 
+        <header class="header margin-app" id="home"><a class="header__name-company" href="/index-ru.html">FindPlace</a>
+          <nav class="nav header__nav">
+            <svg class="burger-nav" id="hamburger" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <path d="M28,10H4A1,1,0,0,1,4,8H28a1,1,0,0,1,0,2Z"></path>
+              <path d="M28,17H4a1,1,0,0,1,0-2H28a1,1,0,0,1,0,2Z"></path>
+              <path d="M28,24H4a1,1,0,0,1,0-2H28a1,1,0,0,1,0,2Z"></path>
+            </svg>
+            <div class="header__box-control box-control">
+              <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="/index-ru.html">Главная</a></li>
+                <li class="nav__item"><a class="nav__link" href="/index-ru.html#categories">Категории</a></li>
+                <li class="nav__item"><a class="nav__link" href="/index-ru.html#about">О нас</a></li>
+              </ul>
+              <div class="header__select-languages select-languages" id="select-languages">
+                <svg class="select-languages__earth" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M7.49996 1.80002C4.35194 1.80002 1.79996 4.352 1.79996 7.50002C1.79996 10.648 4.35194 13.2 7.49996 13.2C10.648 13.2 13.2 10.648 13.2 7.50002C13.2 4.352 10.648 1.80002 7.49996 1.80002ZM0.899963 7.50002C0.899963 3.85494 3.85488 0.900024 7.49996 0.900024C11.145 0.900024 14.1 3.85494 14.1 7.50002C14.1 11.1451 11.145 14.1 7.49996 14.1C3.85488 14.1 0.899963 11.1451 0.899963 7.50002Z" fill="currentColor"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M13.4999 7.89998H1.49994V7.09998H13.4999V7.89998Z" fill="currentColor"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M7.09991 13.5V1.5H7.89991V13.5H7.09991zM10.375 7.49998C10.375 5.32724 9.59364 3.17778 8.06183 1.75656L8.53793 1.24341C10.2396 2.82218 11.075 5.17273 11.075 7.49998 11.075 9.82724 10.2396 12.1778 8.53793 13.7566L8.06183 13.2434C9.59364 11.8222 10.375 9.67273 10.375 7.49998zM3.99969 7.5C3.99969 5.17611 4.80786 2.82678 6.45768 1.24719L6.94177 1.75281C5.4582 3.17323 4.69969 5.32389 4.69969 7.5 4.6997 9.67611 5.45822 11.8268 6.94179 13.2472L6.45769 13.7528C4.80788 12.1732 3.9997 9.8239 3.99969 7.5z" fill="currentColor"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M7.49996 3.95801C9.66928 3.95801 11.8753 4.35915 13.3706 5.19448 13.5394 5.28875 13.5998 5.50197 13.5055 5.67073 13.4113 5.83948 13.198 5.89987 13.0293 5.8056 11.6794 5.05155 9.60799 4.65801 7.49996 4.65801 5.39192 4.65801 3.32052 5.05155 1.97064 5.8056 1.80188 5.89987 1.58866 5.83948 1.49439 5.67073 1.40013 5.50197 1.46051 5.28875 1.62927 5.19448 3.12466 4.35915 5.33063 3.95801 7.49996 3.95801zM7.49996 10.85C9.66928 10.85 11.8753 10.4488 13.3706 9.6135 13.5394 9.51924 13.5998 9.30601 13.5055 9.13726 13.4113 8.9685 13.198 8.90812 13.0293 9.00238 11.6794 9.75643 9.60799 10.15 7.49996 10.15 5.39192 10.15 3.32052 9.75643 1.97064 9.00239 1.80188 8.90812 1.58866 8.9685 1.49439 9.13726 1.40013 9.30601 1.46051 9.51924 1.62927 9.6135 3.12466 10.4488 5.33063 10.85 7.49996 10.85z" fill="currentColor"></path>
+                </svg>
+                <p class="select-languages__languages" id="language" data-lang="ru">Russian</p>
+                <svg class="select-languages__arrow" fill="#000000" height="800px" width="800px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 330 330" xml:space="preserve">
+                  <path id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393		c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393		s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"></path>
+                </svg>
+              </div>
+              <div class="toggle-switch header__toggle">
+                <label class="toggle-switch__label">
+                  <input class="toggle-switch__checkbox" type="checkbox" id="mod"><span class="toggle-switch__slider"></span>
+                </label>
+              </div>
+            </div>
+          </nav>
+        </header>
+      </div>
+      <div class="content">
+        <div class="search-section">
+          <div class="container app">
+            <div class="search-section__container-title">
+              <h1 class="search-section__title title-categories">Просто напишите название города</h1>
+              <div class="select-categories">
+                <div class="select-btn"><span class="sBtn-text" data-category="interesting_places">Выберите категорию</span>
+                  <svg class="arrow-down" fill="#000000" height="800px" width="800px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 330 330" xml:space="preserve">
+                    <path id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393		c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393		s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"></path>
+                  </svg>
+                </div>
+                <ul class="options">
+                  <li class="option" data-category="interesting_places"><span class="option-text">Интересные места</span></li>
+                  <li class="option" data-category="cultural"><span class="option-text">Культура</span></li>
+                  <li class="option" data-category="tourist_facilities"><span class="option-text">Туризм</span></li>
+                  <li class="option" data-category="architecture"><span class="option-text">Архитектура</span></li>
+                  <li class="option" data-category="natural"><span class="option-text">Природа</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="search-section__search">
+              <div class="search">
+                <button class="search__btn">
+                  <svg class="search__loupe" width="19" height="19" viewbox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.56274 16C10.2601 15.9996 11.9085 15.4054 13.2456 14.312L17.4493 18.708L18.8015 17.294L14.5978 12.898C15.6439 11.4997 16.2125 9.77544 16.2129 8C16.2129 3.589 12.7808 0 8.56274 0C4.34464 0 0.912598 3.589 0.912598 8C0.912598 12.411 4.34464 16 8.56274 16ZM8.56274 2C11.727 2 14.3004 4.691 14.3004 8C14.3004 11.309 11.727 14 8.56274 14C5.39845 14 2.82513 11.309 2.82513 8C2.82513 4.691 5.39845 2 8.56274 2Z" fill="#1F2B2E"></path>
+                  </svg>
+                </button>
+                <input class="search__input" type="text" placeholder="Search..." id="search"/>
+              </div>
+            </div>
+            <div class="search-section__control-panel">
+              <div class="filter">
+                <div class="filter__title">
+                  <svg width="25" height="21" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="1.25" y1="1.75" x2="18.75" y2="1.75" stroke="white" stroke-width="2.5" stroke-linecap="round"></line>
+                    <line x1="1.25" y1="7.75" x2="13.75" y2="7.75" stroke="white" stroke-width="2.5" stroke-linecap="round"></line>
+                    <line x1="1.25" y1="13.75" x2="8.75" y2="13.75" stroke="white" stroke-width="2.5" stroke-linecap="round"></line>
+                    <line x1="1.25" y1="19.75" x2="3.75" y2="19.75" stroke="white" stroke-width="2.5" stroke-linecap="round"></line>
+                  </svg><span class="filter__text">Filter By</span>
+                </div>
+                <div class="filter__checkbox" id="filter">
+                  <input id="historic" name="История" type="checkbox" value="historic"/>
+                  <label for="historic">История</label>
+                  <input id="religion" name="Религия" type="checkbox" value="religion"/>
+                  <label for="religion">Религия</label>
+                </div>
+              </div>
+              <div class="sort">
+                <div class="sort__title">
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.35294 2.04972V19.9503M2 7.96685L8.35294 2M13.6471 2.09945V20L20 14.0332" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg><span class="sort__text">Sort By</span>
+                </div>
+                <div class="sort__list" id="sort">
+                  <div class="sort__container">
+                    <input class="sort__input" id="name" name="filter" type="radio" value="name"/>
+                    <label class="sort__label" for="name">Имя</label>
+                  </div>
+                  <div class="sort__container">
+                    <input class="sort__input" id="rating" name="filter" type="radio" value="rating"/>
+                    <label class="sort__label" for="rating">Рейтинг</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-places">
+          <div class="container app">
+            <div id="root">
+              <div class="section-places__grid-container"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section-back">
+        <div class="container">
+          <div class="section-back__arrow-top"><a class="arrow-top" href="#home">Наверх
+              <svg class="arrow-top__icon" width="30" height="50" viewbox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M15 0.333344C6.90001 0.333344 0.333344 6.90001 0.333344 15C0.333344 23.1 6.90001 29.6667 15 29.6667C23.1 29.6667 29.6667 23.1 29.6667 15C29.6667 6.90001 23.1 0.333344 15 0.333344ZM10.6093 17.9427C10.3579 18.1856 10.0211 18.3199 9.67148 18.3169C9.32188 18.3139 8.98746 18.1736 8.74025 17.9264C8.49304 17.6792 8.35282 17.3448 8.34978 16.9952C8.34674 16.6456 8.48113 16.3088 8.72401 16.0573L14.0573 10.724C14.3074 10.474 14.6465 10.3336 15 10.3336C15.3536 10.3336 15.6926 10.474 15.9427 10.724L21.276 16.0573C21.5189 16.3088 21.6533 16.6456 21.6502 16.9952C21.6472 17.3448 21.507 17.6792 21.2598 17.9264C21.0126 18.1736 20.6781 18.3139 20.3285 18.3169C19.9789 18.3199 19.6421 18.1856 19.3907 17.9427L15 13.552L10.6093 17.9427Z" fill="#EF5DA8"></path>
+              </svg></a></div>
+        </div>
+      </div>
+      <footer>
+        <div class="container">
+          <div class="footer">
+            <div class="footer__button"><a class="main-button" href="app-ru.html"> <span class="main-button__text">ИСКАТЬ МЕСТА</span></a></div>
+            <div class="footer__nav">
+              <ul class="nav__list-footer">
+                <li class="nav__item-footer"><a class="nav__link-footer" href="/index-ru.html">Главная</a></li>
+                <li class="nav__item-footer"><a class="nav__link-footer" href="/index-ru.html#categories">Категории</a></li>
+                <li class="nav__item-footer"><a class="nav__link-footer" href="/index-ru.html#about">О нас</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

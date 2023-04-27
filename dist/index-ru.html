@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FindPlace</title>
+    <link href="css/style.min.css?_v=20230427155107" rel="stylesheet"/>
+    <script src="js/index.min.js?_v=20230427155107" defer="defer"> </script>
+  </head>
+  <body>
+    <div class="menu" id="menu">
+      <svg class="menu__cross" id="close-menu" width="64" height="64" viewbox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22.6066 21.3934C22.2161 21.0029 21.5829 21.0029 21.1924 21.3934C20.8019 21.7839 20.8019 22.4171 21.1924 22.8076L22.6066 21.3934ZM40.9914 42.6066C41.3819 42.9971 42.0151 42.9971 42.4056 42.6066C42.7961 42.2161 42.7961 41.5829 42.4056 41.1924L40.9914 42.6066ZM21.1924 41.1924C20.8019 41.5829 20.8019 42.2161 21.1924 42.6066C21.5829 42.9971 22.2161 42.9971 22.6066 42.6066L21.1924 41.1924ZM42.4056 22.8076C42.7961 22.4171 42.7961 21.7839 42.4056 21.3934C42.0151 21.0029 41.3819 21.0029 40.9914 21.3934L42.4056 22.8076ZM21.1924 22.8076L40.9914 42.6066L42.4056 41.1924L22.6066 21.3934L21.1924 22.8076ZM22.6066 42.6066L42.4056 22.8076L40.9914 21.3934L21.1924 41.1924L22.6066 42.6066Z" fill="black"></path>
+      </svg>
+      <div class="toggle-switch menu__toggle">
+        <label class="toggle-switch__label">
+          <input class="toggle-switch__checkbox" type="checkbox" id="mode-mobile"/><span class="toggle-switch__slider"></span>
+        </label>
+      </div>
+      <div class="menu__flex-container">
+        <div class="menu__box-control box-control">
+          <ul class="nav__list-menu">
+            <li class="nav__item"><a class="nav__link" href="#home">Главная</a></li>
+            <li class="nav__item"><a class="nav__link" href="#categories">Категории</a></li>
+            <li class="nav__item"><a class="nav__link" href="#about">О нас</a></li>
+          </ul>
+          <div class="menu__select-languages select-languages" id="select-languages-mobile">
+            <svg class="select-languages__earth" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M7.49996 1.80002C4.35194 1.80002 1.79996 4.352 1.79996 7.50002C1.79996 10.648 4.35194 13.2 7.49996 13.2C10.648 13.2 13.2 10.648 13.2 7.50002C13.2 4.352 10.648 1.80002 7.49996 1.80002ZM0.899963 7.50002C0.899963 3.85494 3.85488 0.900024 7.49996 0.900024C11.145 0.900024 14.1 3.85494 14.1 7.50002C14.1 11.1451 11.145 14.1 7.49996 14.1C3.85488 14.1 0.899963 11.1451 0.899963 7.50002Z" fill="currentColor"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M13.4999 7.89998H1.49994V7.09998H13.4999V7.89998Z" fill="currentColor"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M7.09991 13.5V1.5H7.89991V13.5H7.09991zM10.375 7.49998C10.375 5.32724 9.59364 3.17778 8.06183 1.75656L8.53793 1.24341C10.2396 2.82218 11.075 5.17273 11.075 7.49998 11.075 9.82724 10.2396 12.1778 8.53793 13.7566L8.06183 13.2434C9.59364 11.8222 10.375 9.67273 10.375 7.49998zM3.99969 7.5C3.99969 5.17611 4.80786 2.82678 6.45768 1.24719L6.94177 1.75281C5.4582 3.17323 4.69969 5.32389 4.69969 7.5 4.6997 9.67611 5.45822 11.8268 6.94179 13.2472L6.45769 13.7528C4.80788 12.1732 3.9997 9.8239 3.99969 7.5z" fill="currentColor"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M7.49996 3.95801C9.66928 3.95801 11.8753 4.35915 13.3706 5.19448 13.5394 5.28875 13.5998 5.50197 13.5055 5.67073 13.4113 5.83948 13.198 5.89987 13.0293 5.8056 11.6794 5.05155 9.60799 4.65801 7.49996 4.65801 5.39192 4.65801 3.32052 5.05155 1.97064 5.8056 1.80188 5.89987 1.58866 5.83948 1.49439 5.67073 1.40013 5.50197 1.46051 5.28875 1.62927 5.19448 3.12466 4.35915 5.33063 3.95801 7.49996 3.95801zM7.49996 10.85C9.66928 10.85 11.8753 10.4488 13.3706 9.6135 13.5394 9.51924 13.5998 9.30601 13.5055 9.13726 13.4113 8.9685 13.198 8.90812 13.0293 9.00238 11.6794 9.75643 9.60799 10.15 7.49996 10.15 5.39192 10.15 3.32052 9.75643 1.97064 9.00239 1.80188 8.90812 1.58866 8.9685 1.49439 9.13726 1.40013 9.30601 1.46051 9.51924 1.62927 9.6135 3.12466 10.4488 5.33063 10.85 7.49996 10.85z" fill="currentColor"></path>
+            </svg>
+            <p class="select-languages__languages">Russian</p>
+            <svg class="select-languages__arrow" fill="#000000" height="800px" width="800px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 330 330" xml:space="preserve">
+              <path id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393		c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393		s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container"> 
+      <header class="header" id="home"><a class="header__name-company" href="/index-ru.html">FindPlace</a>
+        <nav class="nav header__nav">
+          <svg class="burger-nav" id="hamburger" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M28,10H4A1,1,0,0,1,4,8H28a1,1,0,0,1,0,2Z"></path>
+            <path d="M28,17H4a1,1,0,0,1,0-2H28a1,1,0,0,1,0,2Z"></path>
+            <path d="M28,24H4a1,1,0,0,1,0-2H28a1,1,0,0,1,0,2Z"></path>
+          </svg>
+          <div class="header__box-control box-control">
+            <ul class="nav__list">
+              <li class="nav__item"><a class="nav__link" href="#home">Главная</a></li>
+              <li class="nav__item"><a class="nav__link" href="#categories">Категории</a></li>
+              <li class="nav__item"><a class="nav__link" href="#about">О нас</a></li>
+            </ul>
+            <div class="header__select-languages select-languages" id="select-languages">
+              <svg class="select-languages__earth" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.49996 1.80002C4.35194 1.80002 1.79996 4.352 1.79996 7.50002C1.79996 10.648 4.35194 13.2 7.49996 13.2C10.648 13.2 13.2 10.648 13.2 7.50002C13.2 4.352 10.648 1.80002 7.49996 1.80002ZM0.899963 7.50002C0.899963 3.85494 3.85488 0.900024 7.49996 0.900024C11.145 0.900024 14.1 3.85494 14.1 7.50002C14.1 11.1451 11.145 14.1 7.49996 14.1C3.85488 14.1 0.899963 11.1451 0.899963 7.50002Z" fill="currentColor"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.4999 7.89998H1.49994V7.09998H13.4999V7.89998Z" fill="currentColor"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.09991 13.5V1.5H7.89991V13.5H7.09991zM10.375 7.49998C10.375 5.32724 9.59364 3.17778 8.06183 1.75656L8.53793 1.24341C10.2396 2.82218 11.075 5.17273 11.075 7.49998 11.075 9.82724 10.2396 12.1778 8.53793 13.7566L8.06183 13.2434C9.59364 11.8222 10.375 9.67273 10.375 7.49998zM3.99969 7.5C3.99969 5.17611 4.80786 2.82678 6.45768 1.24719L6.94177 1.75281C5.4582 3.17323 4.69969 5.32389 4.69969 7.5 4.6997 9.67611 5.45822 11.8268 6.94179 13.2472L6.45769 13.7528C4.80788 12.1732 3.9997 9.8239 3.99969 7.5z" fill="currentColor"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.49996 3.95801C9.66928 3.95801 11.8753 4.35915 13.3706 5.19448 13.5394 5.28875 13.5998 5.50197 13.5055 5.67073 13.4113 5.83948 13.198 5.89987 13.0293 5.8056 11.6794 5.05155 9.60799 4.65801 7.49996 4.65801 5.39192 4.65801 3.32052 5.05155 1.97064 5.8056 1.80188 5.89987 1.58866 5.83948 1.49439 5.67073 1.40013 5.50197 1.46051 5.28875 1.62927 5.19448 3.12466 4.35915 5.33063 3.95801 7.49996 3.95801zM7.49996 10.85C9.66928 10.85 11.8753 10.4488 13.3706 9.6135 13.5394 9.51924 13.5998 9.30601 13.5055 9.13726 13.4113 8.9685 13.198 8.90812 13.0293 9.00238 11.6794 9.75643 9.60799 10.15 7.49996 10.15 5.39192 10.15 3.32052 9.75643 1.97064 9.00239 1.80188 8.90812 1.58866 8.9685 1.49439 9.13726 1.40013 9.30601 1.46051 9.51924 1.62927 9.6135 3.12466 10.4488 5.33063 10.85 7.49996 10.85z" fill="currentColor"></path>
+              </svg>
+              <p class="select-languages__languages" id="language" data-lang="ru">Russian</p>
+              <svg class="select-languages__arrow" fill="#000000" height="800px" width="800px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 330 330" xml:space="preserve">
+                <path id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393		c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393		s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"></path>
+              </svg>
+            </div>
+            <div class="toggle-switch header__toggle">
+              <label class="toggle-switch__label">
+                <input class="toggle-switch__checkbox" type="checkbox" id="mod"><span class="toggle-switch__slider"></span>
+              </label>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </div>
+    <div class="main-index"><img class="road" src="img/road.svg" alt="road">
+      <div class="container">
+        <div class="main-index__content">
+          <div class="main-index__left-content target-action">
+            <h1 class="target-action__title">Поиск мест <span class="target-action__orange">для поездок</span></h1>
+            <p class="target-action__subtitle">Просто напишите город</p><a class="target-action__button main-button" href="app-ru.html"> <span class="main-button__text">ИСКАТЬ МЕСТА</span></a>
+          </div>
+          <div class="main-index__right-content"><picture><source srcset="img/map.webp" type="image/webp"><img src="img/map.png" alt="map and pictures"></picture></div>
+        </div>
+      </div>
+    </div>
+    <div class="section-categories" id="categories">
+      <div class="container">
+        <div class="section-categories__container-title">
+          <div class="container-title">
+            <h2 class="container-title__title">Категории</h2>
+            <hr class="container-title__line">
+          </div>
+        </div>
+      </div>
+      <div class="section-categories__categories">
+        <div class="categories"><img class="background-categories" src="img/background-categories.svg" alt="background-categories">
+          <div class="container">
+            <div class="categories__flex-container">
+              <div class="categories__category-container">
+                <div class="categories__container-icon">
+                  <svg class="categories__icon" width="28" height="35" viewbox="0 0 28 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M28 0V34.2222H24.8889V20.5333H20.2222V8.55556C20.2222 6.28648 21.0417 4.11034 22.5003 2.50586C23.9589 0.901386 25.9372 0 28 0ZM9.33333 20.3622V34.2222H6.22222V20.3622C4.4657 19.9672 2.8871 18.917 1.75334 17.3892C0.619574 15.8615 0.000219435 13.9499 0 11.9778V1.71111H3.11111V13.6889H6.22222V1.71111H9.33333V13.6889H12.4444V1.71111H15.5556V11.9778C15.5553 13.9499 14.936 15.8615 13.8022 17.3892C12.6685 18.917 11.0899 19.9672 9.33333 20.3622Z" fill="#EF5DA8"></path>
+                  </svg>
+                </div>
+                <h3 class="categories__title">Культура</h3>
+                <p class="categories__subtitle">Музеи, галереи, художественные выставки, театры, концертные залы.</p><a class="categories__action action" href="app-ru.html">Проверить
+                  <svg class="action__arrow" width="40" height="14" viewbox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.2931 1.70711C13.9026 1.31658 13.9026 0.683417 14.2931 0.292893C14.6837 -0.0976311 15.3168 -0.0976311 15.7074 0.292893L21.7073 6.29289C22.0979 6.68342 22.0979 7.31658 21.7073 7.70711L15.7074 13.7071C15.3168 14.0976 14.6837 14.0976 14.2931 13.7071C13.9026 13.3166 13.9026 12.6834 14.2931 12.2929L18.586 7.99998H1.01103C0.452653 7.99998 0 7.55227 0 6.99998C0 6.4477 0.452653 5.99998 1.01103 5.99998H18.586L14.2931 1.70711Z" fill="#FD6D61"></path>
+                  </svg></a>
+              </div>
+              <div class="categories__category-container">
+                <div class="categories__container-icon">
+                  <svg class="categories__icon" width="33" height="33" viewbox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0H14.6667V14.6667H0V0ZM0 18.3333H14.6667V33H0V18.3333ZM18.3333 0H33V14.6667H18.3333V0ZM18.3333 18.3333H33V33H18.3333V18.3333ZM22 3.66667V11H29.3333V3.66667H22ZM22 22V29.3333H29.3333V22H22ZM3.66667 3.66667V11H11V3.66667H3.66667ZM3.66667 22V29.3333H11V22H3.66667Z" fill="#EF5DA8"></path>
+                  </svg>
+                </div>
+                <h3 class="categories__title">Природа</h3>
+                <p class="categories__subtitle">Национальные парки, заповедники, озера, реки, горы.</p><a class="categories__action action" href="app-ru.html">Проверить
+                  <svg class="action__arrow" width="40" height="14" viewbox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.2931 1.70711C13.9026 1.31658 13.9026 0.683417 14.2931 0.292893C14.6837 -0.0976311 15.3168 -0.0976311 15.7074 0.292893L21.7073 6.29289C22.0979 6.68342 22.0979 7.31658 21.7073 7.70711L15.7074 13.7071C15.3168 14.0976 14.6837 14.0976 14.2931 13.7071C13.9026 13.3166 13.9026 12.6834 14.2931 12.2929L18.586 7.99998H1.01103C0.452653 7.99998 0 7.55227 0 6.99998C0 6.4477 0.452653 5.99998 1.01103 5.99998H18.586L14.2931 1.70711Z" fill="#FD6D61"></path>
+                  </svg></a>
+              </div>
+              <div class="categories__category-container">
+                <div class="categories__container-icon">
+                  <svg class="categories__icon" width="34" height="32" viewbox="0 0 34 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30.3125 16.8521L26.7292 11.7292L9.6625 23.6792L13.2458 28.7979L9.83333 31.1896L0.275002 17.5354L3.6875 15.1459L7.27083 20.2667L24.3375 8.31669L20.7542 3.19586L24.1667 0.806274L33.725 14.4584L30.3125 16.85V16.8521Z" fill="#EF5DA8"></path>
+                  </svg>
+                </div>
+                <h3 class="categories__title">Архитектура</h3>
+                <p class="categories__subtitle">Здания, монументы, памятники архитектуры.</p><a class="categories__action action" href="app-ru.html">Проверить
+                  <svg class="action__arrow" width="40" height="14" viewbox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.2931 1.70711C13.9026 1.31658 13.9026 0.683417 14.2931 0.292893C14.6837 -0.0976311 15.3168 -0.0976311 15.7074 0.292893L21.7073 6.29289C22.0979 6.68342 22.0979 7.31658 21.7073 7.70711L15.7074 13.7071C15.3168 14.0976 14.6837 14.0976 14.2931 13.7071C13.9026 13.3166 13.9026 12.6834 14.2931 12.2929L18.586 7.99998H1.01103C0.452653 7.99998 0 7.55227 0 6.99998C0 6.4477 0.452653 5.99998 1.01103 5.99998H18.586L14.2931 1.70711Z" fill="#FD6D61"></path>
+                  </svg></a>
+              </div>
+              <div class="categories__category-container">
+                <div class="categories__container-icon">
+                  <svg class="categories__icon" width="38" height="34" viewbox="0 0 38 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M35.8889 0C36.3899 0 36.8703 0.199007 37.2245 0.553243C37.5788 0.907478 37.7778 1.38792 37.7778 1.88889V15.1111C37.7778 15.6121 37.5788 16.0925 37.2245 16.4468C36.8703 16.801 36.3899 17 35.8889 17H32.1092L32.1111 32.1111C32.1111 32.6121 31.9121 33.0925 31.5579 33.4468C31.2036 33.801 30.7232 34 30.2222 34H7.55556C7.05459 34 6.57415 33.801 6.21991 33.4468C5.86567 33.0925 5.66667 32.6121 5.66667 32.1111L5.66478 16.9981L1.88889 17C1.38792 17 0.907478 16.801 0.553243 16.4468C0.199007 16.0925 0 15.6121 0 15.1111V1.88889C0 1.38792 0.199007 0.907478 0.553243 0.553243C0.907478 0.199007 1.38792 0 1.88889 0H13.2222C13.2222 1.50289 13.8192 2.94423 14.882 4.00694C15.9447 5.06964 17.386 5.66667 18.8889 5.66667C20.3918 5.66667 21.8331 5.06964 22.8958 4.00694C23.9585 2.94423 24.5556 1.50289 24.5556 0H35.8889Z" fill="#EF5DA8"></path>
+                  </svg>
+                </div>
+                <h3 class="categories__title">Туризм</h3>
+                <p class="categories__subtitle">Магазины, еда, кафе, парки.</p><a class="categories__action action" href="app-ru.html">Проверить
+                  <svg class="action__arrow" width="40" height="14" viewbox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.2931 1.70711C13.9026 1.31658 13.9026 0.683417 14.2931 0.292893C14.6837 -0.0976311 15.3168 -0.0976311 15.7074 0.292893L21.7073 6.29289C22.0979 6.68342 22.0979 7.31658 21.7073 7.70711L15.7074 13.7071C15.3168 14.0976 14.6837 14.0976 14.2931 13.7071C13.9026 13.3166 13.9026 12.6834 14.2931 12.2929L18.586 7.99998H1.01103C0.452653 7.99998 0 7.55227 0 6.99998C0 6.4477 0.452653 5.99998 1.01103 5.99998H18.586L14.2931 1.70711Z" fill="#FD6D61"></path>
+                  </svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-about" id="about">
+      <div class="container">
+        <div class="section-about__container-title">
+          <div class="container-title">
+            <h2 class="container-title__title">О нас</h2>
+            <hr class="container-title__line">
+          </div>
+        </div>
+        <div class="section-about__descriptions">
+          <div class="description">
+            <div class="description__container-text order1-1">
+              <div class="description__title">Выбирайте лучшие места</div>
+              <div class="description__subtitle">Сайт предлагает удобный и быстрый поиск мест для отдыха в любом городе или регионе, где вы планируете путешествовать. Вы можете использовать сайт для поиска мест, когда вам это удобно, в любое время и в любом месте.</div><a class="description__action action" href="app-ru.html">Проверить
+                <svg class="action__arrow" width="40" height="14" viewbox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14.2931 1.70711C13.9026 1.31658 13.9026 0.683417 14.2931 0.292893C14.6837 -0.0976311 15.3168 -0.0976311 15.7074 0.292893L21.7073 6.29289C22.0979 6.68342 22.0979 7.31658 21.7073 7.70711L15.7074 13.7071C15.3168 14.0976 14.6837 14.0976 14.2931 13.7071C13.9026 13.3166 13.9026 12.6834 14.2931 12.2929L18.586 7.99998H1.01103C0.452653 7.99998 0 7.55227 0 6.99998C0 6.4477 0.452653 5.99998 1.01103 5.99998H18.586L14.2931 1.70711Z" fill="#FD6D61"></path>
+                </svg></a>
+            </div>
+            <div class="description__container-images order1-2">
+              <div class="description__container-position"><picture><source srcset="img/description-big.webp" type="image/webp"><img class="description__image--big" src="img/description-big.png" alt="Photo of place"/></picture><picture><source srcset="img/description-mini.webp" type="image/webp"><img class="description__image--mini" src="img/description-mini.png" alt="Photo of place"/></picture></div>
+            </div>
+          </div>
+          <div class="description">
+            <div class="description__container-text order2-1">
+              <div class="description__title">Фильтрация мест по категориям</div>
+              <div class="description__subtitle">Вы можете отфильтровать список мест для отдыха, чтобы увидеть только те, которые соответствуют вашим интересам и предпочтениям. Например, вы можете отфильтровать места по категориям, таким как природа, архитектура, достопримечательности культуры.</div><a class="description__action action" href="app-ru.html">Проверить
+                <svg class="action__arrow" width="40" height="14" viewbox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14.2931 1.70711C13.9026 1.31658 13.9026 0.683417 14.2931 0.292893C14.6837 -0.0976311 15.3168 -0.0976311 15.7074 0.292893L21.7073 6.29289C22.0979 6.68342 22.0979 7.31658 21.7073 7.70711L15.7074 13.7071C15.3168 14.0976 14.6837 14.0976 14.2931 13.7071C13.9026 13.3166 13.9026 12.6834 14.2931 12.2929L18.586 7.99998H1.01103C0.452653 7.99998 0 7.55227 0 6.99998C0 6.4477 0.452653 5.99998 1.01103 5.99998H18.586L14.2931 1.70711Z" fill="#FD6D61"></path>
+                </svg></a>
+            </div>
+            <div class="description__container-images order2-2">
+              <div class="description__container-position"><picture><source srcset="img/description-big.webp" type="image/webp"><img class="description__image--big" src="img/description-big.png" alt="Photo of place"/></picture><picture><source srcset="img/description-mini.webp" type="image/webp"><img class="description__image--mini" src="img/description-mini.png" alt="Photo of place"/></picture></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-back">
+      <div class="container">
+        <div class="section-back__arrow-top"><a class="arrow-top" href="#home">Наверх
+            <svg class="arrow-top__icon" width="30" height="50" viewbox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M15 0.333344C6.90001 0.333344 0.333344 6.90001 0.333344 15C0.333344 23.1 6.90001 29.6667 15 29.6667C23.1 29.6667 29.6667 23.1 29.6667 15C29.6667 6.90001 23.1 0.333344 15 0.333344ZM10.6093 17.9427C10.3579 18.1856 10.0211 18.3199 9.67148 18.3169C9.32188 18.3139 8.98746 18.1736 8.74025 17.9264C8.49304 17.6792 8.35282 17.3448 8.34978 16.9952C8.34674 16.6456 8.48113 16.3088 8.72401 16.0573L14.0573 10.724C14.3074 10.474 14.6465 10.3336 15 10.3336C15.3536 10.3336 15.6926 10.474 15.9427 10.724L21.276 16.0573C21.5189 16.3088 21.6533 16.6456 21.6502 16.9952C21.6472 17.3448 21.507 17.6792 21.2598 17.9264C21.0126 18.1736 20.6781 18.3139 20.3285 18.3169C19.9789 18.3199 19.6421 18.1856 19.3907 17.9427L15 13.552L10.6093 17.9427Z" fill="#EF5DA8"></path>
+            </svg></a></div>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="footer">
+          <div class="footer__button"><a class="main-button" href="app-ru.html"> <span class="main-button__text">ИСКАТЬ МЕСТА</span></a></div>
+          <div class="footer__nav">
+            <ul class="nav__list-footer">
+              <li class="nav__item-footer"><a class="nav__link-footer" href="#home">Главная</a></li>
+              <li class="nav__item-footer"><a class="nav__link-footer" href="#categories">Категории</a></li>
+              <li class="nav__item-footer"><a class="nav__link-footer" href="#about">О нас</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
